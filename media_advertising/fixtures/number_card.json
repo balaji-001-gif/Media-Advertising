@@ -1,0 +1,34 @@
+[
+  {
+    "doctype": "Number Card",
+    "document_type": "Campaign",
+    "name": "Campaign",
+    "label": "Campaign",
+    "function": "Count",
+    "is_standard": 1
+  },
+  {
+    "doctype": "Number Card",
+    "document_type": "Agency Client",
+    "name": "Agency Client",
+    "label": "Agency Client",
+    "function": "Count",
+    "is_standard": 1
+  },
+  {
+    "doctype": "Number Card",
+    "document_type": "Media Plan",
+    "name": "Media Plan",
+    "label": "Media Plan",
+    "function": "Count",
+    "is_standard": 1
+  },
+  {
+    "doctype": "Number Card",
+    "document_type": "Ad Booking",
+    "name": "Ad Booking",
+    "label": "Ad Booking",
+    "function": "Count",
+    "is_standard": 1
+  }
+]

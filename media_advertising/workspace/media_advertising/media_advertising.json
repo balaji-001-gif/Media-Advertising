@@ -1,57 +1,71 @@
 {
   "charts": [],
-  "content": "[{\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Campaign\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Agency Client\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Media Plan\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Ad Booking\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Media Invoice\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Proposal\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Campaign Brief\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Creative Asset\", \"col\": 3}}]",
+  "content": "[{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Campaign\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Agency Client\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Media Plan\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ad Booking\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Media Invoice\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Proposal\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Campaign Brief\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Creative Asset\",\"col\":3}},{\"type\":\"card\",\"data\":{\"card_name\":\"Campaign Management\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Client & CRM\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Media Operations\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Billing & Finance\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Resource & Production\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reporting & Analytics\",\"col\":4}}]",
   "doctype": "Workspace",
   "extends": "",
   "icon": "bullhorn",
   "is_hidden": 0,
   "label": "Media Advertising",
-  "links": [],
   "module": "Media Advertising",
   "name": "Media Advertising",
   "public": 1,
   "roles": [],
+  "links": [
+    {"hidden": 0, "is_query_report": 0, "label": "Campaign Management", "onboard": 0, "type": "Card Break"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Campaign", "link_to": "Campaign", "link_type": "DocType", "onboard": 1, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Campaign Brief", "link_to": "Campaign Brief", "link_type": "DocType", "onboard": 1, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Campaign Phase", "link_to": "Campaign Phase", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Media Plan", "link_to": "Media Plan", "link_type": "DocType", "onboard": 1, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Ad Placement", "link_to": "Ad Placement", "link_type": "DocType", "onboard": 0, "type": "Link"},
+
+    {"hidden": 0, "is_query_report": 0, "label": "Client & CRM", "onboard": 0, "type": "Card Break"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Agency Client", "link_to": "Agency Client", "link_type": "DocType", "onboard": 1, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Client Brief", "link_to": "Client Brief", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Client Approval", "link_to": "Client Approval", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Proposal", "link_to": "Proposal", "link_type": "DocType", "onboard": 1, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Retainer Agreement", "link_to": "Retainer Agreement", "link_type": "DocType", "onboard": 0, "type": "Link"},
+
+    {"hidden": 0, "is_query_report": 0, "label": "Media Operations", "onboard": 0, "type": "Card Break"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Ad Booking", "link_to": "Ad Booking", "link_type": "DocType", "onboard": 1, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Ad Slot", "link_to": "Ad Slot", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Ad Format", "link_to": "Ad Format", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Traffic Order", "link_to": "Traffic Order", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Creative Asset", "link_to": "Creative Asset", "link_type": "DocType", "onboard": 1, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Delivery Report", "link_to": "Delivery Report", "link_type": "DocType", "onboard": 0, "type": "Link"},
+
+    {"hidden": 0, "is_query_report": 0, "label": "Billing & Finance", "onboard": 0, "type": "Card Break"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Media Invoice", "link_to": "Media Invoice", "link_type": "DocType", "onboard": 1, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Campaign Budget", "link_to": "Campaign Budget", "link_type": "DocType", "onboard": 1, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Vendor Bill", "link_to": "Vendor Bill", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Commission Entry", "link_to": "Commission Entry", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "WIP Entry", "link_to": "WIP Entry", "link_type": "DocType", "onboard": 0, "type": "Link"},
+
+    {"hidden": 0, "is_query_report": 0, "label": "Resource & Production", "onboard": 0, "type": "Card Break"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Production Job", "link_to": "Production Job", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Resource Allocation", "link_to": "Resource Allocation", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Timesheet Entry", "link_to": "Timesheet Entry", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Freelancer Contract", "link_to": "Freelancer Contract", "link_type": "DocType", "onboard": 0, "type": "Link"},
+
+    {"hidden": 0, "is_query_report": 0, "label": "Reporting & Analytics", "onboard": 0, "type": "Card Break"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Campaign Report", "link_to": "Campaign Report", "link_type": "DocType", "onboard": 1, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Budget vs Actual", "link_to": "Budget vs Actual", "link_type": "DocType", "onboard": 0, "type": "Link"},
+
+    {"hidden": 0, "is_query_report": 0, "label": "Masters", "onboard": 0, "type": "Card Break"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Media Channel", "link_to": "Media Channel", "link_type": "DocType", "onboard": 1, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Media Category", "link_to": "Media Category", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Industry Vertical", "link_to": "Industry Vertical", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "KPI Definition", "link_to": "KPI Definition", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Pricing Template", "link_to": "Pricing Template", "link_type": "DocType", "onboard": 0, "type": "Link"}
+  ],
   "shortcuts": [
-    {
-      "label": "Campaign",
-      "link_to": "Campaign",
-      "type": "DocType"
-    },
-    {
-      "label": "Agency Client",
-      "link_to": "Agency Client",
-      "type": "DocType"
-    },
-    {
-      "label": "Media Plan",
-      "link_to": "Media Plan",
-      "type": "DocType"
-    },
-    {
-      "label": "Ad Booking",
-      "link_to": "Ad Booking",
-      "type": "DocType"
-    },
-    {
-      "label": "Media Invoice",
-      "link_to": "Media Invoice",
-      "type": "DocType"
-    },
-    {
-      "label": "Proposal",
-      "link_to": "Proposal",
-      "type": "DocType"
-    },
-    {
-      "label": "Campaign Brief",
-      "link_to": "Campaign Brief",
-      "type": "DocType"
-    },
-    {
-      "label": "Creative Asset",
-      "link_to": "Creative Asset",
-      "type": "DocType"
-    }
+    {"label": "Campaign", "link_to": "Campaign", "type": "DocType"},
+    {"label": "Agency Client", "link_to": "Agency Client", "type": "DocType"},
+    {"label": "Media Plan", "link_to": "Media Plan", "type": "DocType"},
+    {"label": "Ad Booking", "link_to": "Ad Booking", "type": "DocType"},
+    {"label": "Media Invoice", "link_to": "Media Invoice", "type": "DocType"},
+    {"label": "Proposal", "link_to": "Proposal", "type": "DocType"},
+    {"label": "Campaign Brief", "link_to": "Campaign Brief", "type": "DocType"},
+    {"label": "Creative Asset", "link_to": "Creative Asset", "type": "DocType"}
   ],
   "title": "Media Advertising"
 }

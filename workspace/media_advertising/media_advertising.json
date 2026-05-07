@@ -1,0 +1,67 @@
+{
+  "doctype": "Workspace",
+  "name": "Media Advertising",
+  "label": "Media Advertising",
+  "title": "Media Advertising",
+  "icon": "bullhorn",
+  "module": "Media Advertising",
+  "public": 1,
+  "is_hidden": 0,
+  "content": [
+    {
+      "type": "card_break",
+      "data": {
+        "label": "Overview"
+      }
+    },
+    {
+      "type": "number_card",
+      "data": {
+        "number_card_name": "Campaign",
+        "col": 3
+      }
+    },
+    {
+      "type": "number_card",
+      "data": {
+        "number_card_name": "Agency Client",
+        "col": 3
+      }
+    },
+    {
+      "type": "number_card",
+      "data": {
+        "number_card_name": "Media Plan",
+        "col": 3
+      }
+    },
+    {
+      "type": "number_card",
+      "data": {
+        "number_card_name": "Ad Booking",
+        "col": 3
+      }
+    },
+    {
+      "type": "card_break",
+      "data": {
+        "label": "Quick Links"
+      }
+    },
+    {
+      "type": "card",
+      "data": {
+        "card_name": "Campaign Management",
+        "col": 6
+      }
+    },
+    {
+      "type": "card",
+      "data": {
+        "card_name": "Creative Assets",
+        "col": 6
+      }
+    }
+  ],
+  "roles": []
+}
