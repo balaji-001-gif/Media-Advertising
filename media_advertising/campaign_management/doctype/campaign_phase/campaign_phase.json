@@ -1,0 +1,34 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2024-01-01 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series","phase_name","campaign","phase_type","section_break_1",
+    "start_date","end_date","status","column_break_1","phase_budget","notes"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"PHASE-.YYYY.-"},
+    {"fieldname":"phase_name","fieldtype":"Data","label":"Phase Name","reqd":1,"in_list_view":1},
+    {"fieldname":"campaign","fieldtype":"Link","label":"Campaign","options":"Campaign","reqd":1,"in_list_view":1},
+    {"fieldname":"phase_type","fieldtype":"Select","label":"Phase Type","options":"\nPlanning\nCreative Development\nMedia Booking\nExecution\nMonitoring\nReporting"},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"start_date","fieldtype":"Date","label":"Start Date","reqd":1},
+    {"fieldname":"end_date","fieldtype":"Date","label":"End Date","reqd":1},
+    {"fieldname":"status","fieldtype":"Select","label":"Status","options":"\nNot Started\nIn Progress\nCompleted\nOn Hold","default":"Not Started","in_list_view":1},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"phase_budget","fieldtype":"Currency","label":"Phase Budget"},
+    {"fieldname":"notes","fieldtype":"Text","label":"Notes"}
+  ],
+  "module": "Campaign Management",
+  "name": "Campaign Phase",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"create":1,"read":1,"report":1,"role":"All","write":1}
+  ],
+  "title_field": "phase_name",
+  "track_changes": 1
+}

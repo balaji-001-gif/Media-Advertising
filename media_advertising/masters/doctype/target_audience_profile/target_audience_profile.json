@@ -1,0 +1,33 @@
+{
+  "actions": [],
+  "autoname": "field:profile_name",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "profile_name","section_break_1",
+    "age_group","gender","income_bracket","geography","section_break_2",
+    "interests","behaviour","psychographics","notes"
+  ],
+  "fields": [
+    {"fieldname":"profile_name","fieldtype":"Data","label":"Profile Name","reqd":1,"unique":1,"in_list_view":1},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"age_group","fieldtype":"Data","label":"Age Group (e.g. 25-44)"},
+    {"fieldname":"gender","fieldtype":"Select","label":"Gender","options":"\nAll\nMale\nFemale\nOther"},
+    {"fieldname":"income_bracket","fieldtype":"Select","label":"Income Bracket","options":"\nSEC A\nSEC B\nSEC C\nSEC D\nAll"},
+    {"fieldname":"geography","fieldtype":"Data","label":"Geography / Market"},
+    {"fieldname":"section_break_2","fieldtype":"Section Break"},
+    {"fieldname":"interests","fieldtype":"Text","label":"Interests"},
+    {"fieldname":"behaviour","fieldtype":"Text","label":"Behaviour Patterns"},
+    {"fieldname":"psychographics","fieldtype":"Text","label":"Psychographics"},
+    {"fieldname":"notes","fieldtype":"Text","label":"Notes"}
+  ],
+  "module": "Masters",
+  "name": "Target Audience Profile",
+  "naming_rule": "By fieldname",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"read":1,"report":1,"role":"All"}
+  ],
+  "title_field": "profile_name"
+}

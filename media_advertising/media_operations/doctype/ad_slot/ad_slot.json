@@ -1,0 +1,37 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series","slot_name","media_channel","ad_format","section_break_1",
+    "slot_date","slot_time","duration_seconds","column_break_1",
+    "rate","availability_status","pricing_template","section_break_2","notes"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"SLOT-.YYYY.-"},
+    {"fieldname":"slot_name","fieldtype":"Data","label":"Slot Name","reqd":1,"in_list_view":1},
+    {"fieldname":"media_channel","fieldtype":"Link","label":"Media Channel","options":"Media Channel","reqd":1,"in_list_view":1},
+    {"fieldname":"ad_format","fieldtype":"Link","label":"Ad Format","options":"Ad Format"},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"slot_date","fieldtype":"Date","label":"Slot Date"},
+    {"fieldname":"slot_time","fieldtype":"Time","label":"Slot Time"},
+    {"fieldname":"duration_seconds","fieldtype":"Int","label":"Duration (Seconds)"},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"rate","fieldtype":"Currency","label":"Rate Card Price","reqd":1},
+    {"fieldname":"availability_status","fieldtype":"Select","label":"Availability","options":"\nAvailable\nBooked\nBlocked\nExpired","default":"Available","in_list_view":1},
+    {"fieldname":"pricing_template","fieldtype":"Link","label":"Pricing Template","options":"Pricing Template"},
+    {"fieldname":"section_break_2","fieldtype":"Section Break"},
+    {"fieldname":"notes","fieldtype":"Text","label":"Notes"}
+  ],
+  "module": "Media Operations",
+  "name": "Ad Slot",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"read":1,"report":1,"role":"All"}
+  ],
+  "title_field": "slot_name",
+  "track_changes": 1
+}

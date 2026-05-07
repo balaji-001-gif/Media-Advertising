@@ -1,0 +1,17 @@
+{
+  "attach_print": 0,
+  "channel": "System Notification",
+  "condition": "doc.status == 'In Review'",
+  "creation": "2024-01-01 00:00:00.000000",
+  "doctype": "Notification",
+  "document_type": "Creative Asset",
+  "enabled": 1,
+  "event": "Value Change",
+  "message": "<p>Creative Asset <b>{{ doc.asset_name }}</b> for campaign <b>{{ doc.campaign }}</b> has been submitted for your review.</p>",
+  "name": "Creative Approval Request",
+  "owner": "Administrator",
+  "recipients": [{"cc": "","condition": "","receiver_by_role": "System Manager"}],
+  "send_system_notification": 1,
+  "subject": "Creative Review Required: {{ doc.asset_name }}",
+  "value_changed": "status"
+}

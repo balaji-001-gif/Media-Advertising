@@ -1,0 +1,17 @@
+{
+  "attach_print": 0,
+  "channel": "Email",
+  "condition": "doc.status == 'Submitted'",
+  "creation": "2024-01-01 00:00:00.000000",
+  "days_in_advance": 0,
+  "doctype": "Notification",
+  "document_type": "Media Invoice",
+  "enabled": 1,
+  "event": "Days After",
+  "message": "<p>Media Invoice <b>{{ doc.name }}</b> for client <b>{{ doc.client }}</b> amounting to {{ doc.total_amount }} was due on {{ doc.due_date }} and remains unpaid.</p>",
+  "name": "Media Invoice Overdue",
+  "owner": "Administrator",
+  "recipients": [{"cc": "","condition": "","receiver_by_role": "Accounts Manager"}],
+  "send_system_notification": 1,
+  "subject": "Overdue Invoice: {{ doc.name }} - {{ doc.client }}"
+}

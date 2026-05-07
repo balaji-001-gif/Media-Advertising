@@ -1,0 +1,42 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "field_order": [
+    "naming_series","job_title","campaign","client","section_break_1",
+    "job_type","start_date","end_date","status","column_break_1",
+    "assigned_to","estimated_hours","actual_hours","section_break_2",
+    "description","notes","amended_from"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"PROD-.YYYY.-"},
+    {"fieldname":"job_title","fieldtype":"Data","label":"Job Title","reqd":1,"in_list_view":1},
+    {"fieldname":"campaign","fieldtype":"Link","label":"Campaign","options":"Campaign","reqd":1,"in_list_view":1},
+    {"fieldname":"client","fieldtype":"Link","label":"Client","options":"Agency Client"},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"job_type","fieldtype":"Select","label":"Job Type","options":"\nConceptualisation\nScript / Copy\nDesign\nVideo Shoot\nPost Production\nDigital Setup\nMedia Booking","in_list_view":1},
+    {"fieldname":"start_date","fieldtype":"Date","label":"Start Date"},
+    {"fieldname":"end_date","fieldtype":"Date","label":"End Date"},
+    {"fieldname":"status","fieldtype":"Select","label":"Status","options":"\nOpen\nIn Progress\nReview\nCompleted\nCancelled","default":"Open","in_list_view":1},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"assigned_to","fieldtype":"Link","label":"Assigned To","options":"User"},
+    {"fieldname":"estimated_hours","fieldtype":"Float","label":"Estimated Hours"},
+    {"fieldname":"actual_hours","fieldtype":"Float","label":"Actual Hours","read_only":1},
+    {"fieldname":"section_break_2","fieldtype":"Section Break"},
+    {"fieldname":"description","fieldtype":"Text Editor","label":"Description"},
+    {"fieldname":"notes","fieldtype":"Text","label":"Notes"},
+    {"fieldname":"amended_from","fieldtype":"Link","label":"Amended From","no_copy":1,"options":"Production Job","read_only":1}
+  ],
+  "module": "Resource Production",
+  "name": "Production Job",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","submit":1,"cancel":1,"write":1},
+    {"create":1,"read":1,"report":1,"role":"All","write":1}
+  ],
+  "title_field": "job_title",
+  "track_changes": 1
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "doctype": "Industry Vertical",
+    "vertical_name": "FMCG",
+    "is_active": 1,
+    "name": "FMCG"
+  },
+  {
+    "doctype": "Industry Vertical",
+    "vertical_name": "Automobile",
+    "is_active": 1,
+    "name": "Automobile"
+  },
+  {
+    "doctype": "Industry Vertical",
+    "vertical_name": "Technology",
+    "is_active": 1,
+    "name": "Technology"
+  },
+  {
+    "doctype": "Industry Vertical",
+    "vertical_name": "BFSI",
+    "is_active": 1,
+    "name": "BFSI"
+  },
+  {
+    "doctype": "Industry Vertical",
+    "vertical_name": "E-Commerce",
+    "is_active": 1,
+    "name": "E-Commerce"
+  },
+  {
+    "doctype": "Industry Vertical",
+    "vertical_name": "Real Estate",
+    "is_active": 1,
+    "name": "Real Estate"
+  },
+  {
+    "doctype": "Industry Vertical",
+    "vertical_name": "Healthcare",
+    "is_active": 1,
+    "name": "Healthcare"
+  },
+  {
+    "doctype": "Industry Vertical",
+    "vertical_name": "Education",
+    "is_active": 1,
+    "name": "Education"
+  },
+  {
+    "doctype": "Industry Vertical",
+    "vertical_name": "FMCD",
+    "is_active": 1,
+    "name": "FMCD"
+  },
+  {
+    "doctype": "Industry Vertical",
+    "vertical_name": "Retail",
+    "is_active": 1,
+    "name": "Retail"
+  }
+]

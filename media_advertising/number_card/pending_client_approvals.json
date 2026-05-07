@@ -1,0 +1,15 @@
+{
+  "color": "#ef4444",
+  "creation": "2024-01-01 00:00:00.000000",
+  "doctype": "Number Card",
+  "document_type": "Client Approval",
+  "filters_json": "[{\"doctype\":\"Client Approval\",\"fieldname\":\"status\",\"filter_type\":\"Document\",\"value\":\"Pending\",\"label\":\"Status\"}]",
+  "function": "Count",
+  "is_public": 1,
+  "is_standard": 1,
+  "label": "Pending Client Approvals",
+  "module": "Media Advertising",
+  "name": "Pending Client Approvals",
+  "owner": "Administrator",
+  "show_percentage_stats": 0
+}

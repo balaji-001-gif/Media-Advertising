@@ -1,0 +1,18 @@
+{
+  "attach_print": 0,
+  "channel": "Email",
+  "condition": "doc.status == 'Active'",
+  "creation": "2024-01-01 00:00:00.000000",
+  "days_in_advance": 3,
+  "doctype": "Notification",
+  "document_type": "Campaign",
+  "enabled": 1,
+  "event": "Days Before",
+  "message": "<p>Dear {{ doc.account_manager }},</p><p>Campaign <b>{{ doc.campaign_name }}</b> for client <b>{{ doc.client }}</b> is ending in 3 days on {{ doc.end_date }}.</p><p>Please ensure all reporting and wrap-up activities are scheduled.</p>",
+  "name": "Campaign Deadline Alert",
+  "owner": "Administrator",
+  "recipients": [{"cc": "","condition": "","receiver_by_document_field": "account_manager"}],
+  "send_system_notification": 1,
+  "send_to_all_assignees": 0,
+  "subject": "Campaign {{ doc.campaign_name }} ending in 3 days"
+}

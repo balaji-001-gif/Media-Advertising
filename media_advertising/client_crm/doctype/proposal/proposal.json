@@ -1,0 +1,41 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series","proposal_title","client","client_brief","section_break_1",
+    "proposal_date","valid_until","status","column_break_1",
+    "total_value","prepared_by","section_break_2",
+    "executive_summary","scope","budget_breakdown","notes","attachment"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"PROP-.YYYY.-"},
+    {"fieldname":"proposal_title","fieldtype":"Data","label":"Proposal Title","reqd":1,"in_list_view":1},
+    {"fieldname":"client","fieldtype":"Link","label":"Client","options":"Agency Client","reqd":1,"in_list_view":1},
+    {"fieldname":"client_brief","fieldtype":"Link","label":"Client Brief","options":"Client Brief"},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"proposal_date","fieldtype":"Date","label":"Proposal Date","default":"Today"},
+    {"fieldname":"valid_until","fieldtype":"Date","label":"Valid Until"},
+    {"fieldname":"status","fieldtype":"Select","label":"Status","options":"\nDraft\nSent\nWon\nLost\nWithdrawn","default":"Draft","in_list_view":1},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"total_value","fieldtype":"Currency","label":"Proposed Value"},
+    {"fieldname":"prepared_by","fieldtype":"Link","label":"Prepared By","options":"User"},
+    {"fieldname":"section_break_2","fieldtype":"Section Break"},
+    {"fieldname":"executive_summary","fieldtype":"Text Editor","label":"Executive Summary"},
+    {"fieldname":"scope","fieldtype":"Text Editor","label":"Scope of Work"},
+    {"fieldname":"budget_breakdown","fieldtype":"Text Editor","label":"Budget Breakdown"},
+    {"fieldname":"notes","fieldtype":"Text","label":"Notes"},
+    {"fieldname":"attachment","fieldtype":"Attach","label":"Proposal Document"}
+  ],
+  "module": "Client Crm",
+  "name": "Proposal",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"create":1,"read":1,"report":1,"role":"All","write":1}
+  ],
+  "title_field": "proposal_title",
+  "track_changes": 1
+}

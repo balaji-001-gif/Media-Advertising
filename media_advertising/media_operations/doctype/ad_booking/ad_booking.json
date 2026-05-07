@@ -1,0 +1,53 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "field_order": [
+    "naming_series","booking_title","campaign","client","section_break_1",
+    "ad_slot","media_channel","ad_format","column_break_1",
+    "booking_date","air_date","status","section_break_2",
+    "negotiated_rate","agency_commission_pct","net_rate","column_break_2",
+    "creative_asset","traffic_order","amended_from"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"BOOK-.YYYY.-"},
+    {"fieldname":"booking_title","fieldtype":"Data","label":"Booking Title","reqd":1,"in_list_view":1},
+    {"fieldname":"campaign","fieldtype":"Link","label":"Campaign","options":"Campaign","reqd":1,"in_list_view":1},
+    {"fieldname":"client","fieldtype":"Link","label":"Client","options":"Agency Client","reqd":1},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"ad_slot","fieldtype":"Link","label":"Ad Slot","options":"Ad Slot","reqd":1},
+    {"fieldname":"media_channel","fieldtype":"Link","label":"Media Channel","options":"Media Channel","read_only":1},
+    {"fieldname":"ad_format","fieldtype":"Link","label":"Ad Format","options":"Ad Format"},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"booking_date","fieldtype":"Date","label":"Booking Date","default":"Today"},
+    {"fieldname":"air_date","fieldtype":"Date","label":"Air Date"},
+    {"fieldname":"status","fieldtype":"Select","label":"Status","options":"\nDraft\nConfirmed\nLive\nCompleted\nCancelled","default":"Draft","in_list_view":1},
+    {"fieldname":"section_break_2","fieldtype":"Section Break"},
+    {"fieldname":"negotiated_rate","fieldtype":"Currency","label":"Negotiated Rate","reqd":1},
+    {"fieldname":"agency_commission_pct","fieldtype":"Percent","label":"Agency Commission %","default":"15"},
+    {"fieldname":"net_rate","fieldtype":"Currency","label":"Net Rate (after commission)","read_only":1},
+    {"fieldname":"column_break_2","fieldtype":"Column Break"},
+    {"fieldname":"creative_asset","fieldtype":"Link","label":"Creative Asset","options":"Creative Asset"},
+    {"fieldname":"traffic_order","fieldtype":"Link","label":"Traffic Order","options":"Traffic Order","read_only":1},
+    {"fieldname":"amended_from","fieldtype":"Link","label":"Amended From","no_copy":1,"options":"Ad Booking","read_only":1}
+  ],
+  "module": "Media Operations",
+  "name": "Ad Booking",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","submit":1,"cancel":1,"amend":1,"write":1},
+    {"create":1,"read":1,"report":1,"role":"All","write":1}
+  ],
+  "states": [
+    {"color":"Gray","title":"Draft"},
+    {"color":"Blue","title":"Confirmed"},
+    {"color":"Green","title":"Live"},
+    {"color":"Cyan","title":"Completed"},
+    {"color":"Red","title":"Cancelled"}
+  ],
+  "title_field": "booking_title",
+  "track_changes": 1
+}

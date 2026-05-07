@@ -1,0 +1,53 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "creation": "2024-01-01 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series","brief_title","campaign","client","section_break_1",
+    "brief_date","due_date","status","column_break_1",
+    "submitted_by","approved_by","section_break_2",
+    "objectives","target_audience","key_messages","column_break_2",
+    "budget_indication","deliverables","section_break_3",
+    "notes","attachments"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"BRIEF-.YYYY.-"},
+    {"fieldname":"brief_title","fieldtype":"Data","label":"Brief Title","reqd":1,"in_list_view":1},
+    {"fieldname":"campaign","fieldtype":"Link","label":"Campaign","options":"Campaign","in_list_view":1},
+    {"fieldname":"client","fieldtype":"Link","label":"Client","options":"Agency Client","reqd":1,"in_list_view":1},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"brief_date","fieldtype":"Date","label":"Brief Date","reqd":1,"default":"Today"},
+    {"fieldname":"due_date","fieldtype":"Date","label":"Due Date"},
+    {"fieldname":"status","fieldtype":"Select","label":"Status","options":"\nDraft\nReview\nApproved\nRevision Requested\nArchived","default":"Draft"},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"submitted_by","fieldtype":"Link","label":"Submitted By","options":"User"},
+    {"fieldname":"approved_by","fieldtype":"Link","label":"Approved By","options":"User"},
+    {"fieldname":"section_break_2","fieldtype":"Section Break"},
+    {"fieldname":"objectives","fieldtype":"Text Editor","label":"Campaign Objectives","reqd":1},
+    {"fieldname":"target_audience","fieldtype":"Text Editor","label":"Target Audience"},
+    {"fieldname":"key_messages","fieldtype":"Text Editor","label":"Key Messages"},
+    {"fieldname":"column_break_2","fieldtype":"Column Break"},
+    {"fieldname":"budget_indication","fieldtype":"Currency","label":"Indicative Budget"},
+    {"fieldname":"deliverables","fieldtype":"Text","label":"Expected Deliverables"},
+    {"fieldname":"section_break_3","fieldtype":"Section Break"},
+    {"fieldname":"notes","fieldtype":"Text Editor","label":"Additional Notes"},
+    {"fieldname":"attachments","fieldtype":"Attach","label":"Brief Document"}
+  ],
+  "is_submittable": 0,
+  "links": [],
+  "modified": "2024-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Campaign Management",
+  "name": "Campaign Brief",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"email":1,"export":1,"print":1,"read":1,"report":1,"role":"System Manager","share":1,"write":1},
+    {"create":1,"email":1,"print":1,"read":1,"report":1,"role":"All","write":1}
+  ],
+  "title_field": "brief_title",
+  "track_changes": 1
+}

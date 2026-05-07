@@ -1,0 +1,18 @@
+{
+  "cards": [
+    {"card": "Active Campaigns"},
+    {"card": "Open Media Invoices"},
+    {"card": "Pending Client Approvals"}
+  ],
+  "charts": [
+    {"chart": "Campaigns by Status", "width": "Half"},
+    {"chart": "Monthly Invoice Value", "width": "Half"}
+  ],
+  "creation": "2024-01-01 00:00:00.000000",
+  "doctype": "Dashboard",
+  "is_default": 0,
+  "is_standard": 1,
+  "module": "Media Advertising",
+  "name": "Media Advertising Dashboard",
+  "owner": "Administrator"
+}

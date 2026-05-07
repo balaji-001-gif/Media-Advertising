@@ -1,0 +1,29 @@
+{
+  "actions": [],
+  "autoname": "field:format_name",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "format_name","media_category","section_break_1",
+    "duration_seconds","dimensions","file_types","is_active","notes"
+  ],
+  "fields": [
+    {"fieldname":"format_name","fieldtype":"Data","label":"Format Name","reqd":1,"unique":1,"in_list_view":1},
+    {"fieldname":"media_category","fieldtype":"Link","label":"Media Category","options":"Media Category","in_list_view":1},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"duration_seconds","fieldtype":"Int","label":"Duration (Seconds)"},
+    {"fieldname":"dimensions","fieldtype":"Data","label":"Dimensions (e.g. 728x90)"},
+    {"fieldname":"file_types","fieldtype":"Data","label":"Accepted File Types"},
+    {"fieldname":"is_active","fieldtype":"Check","label":"Is Active","default":"1"},
+    {"fieldname":"notes","fieldtype":"Text","label":"Notes"}
+  ],
+  "module": "Media Operations",
+  "name": "Ad Format",
+  "naming_rule": "By fieldname",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"read":1,"report":1,"role":"All"}
+  ],
+  "title_field": "format_name"
+}

@@ -1,0 +1,15 @@
+{
+  "color": "#f59e0b",
+  "creation": "2024-01-01 00:00:00.000000",
+  "doctype": "Number Card",
+  "document_type": "Media Invoice",
+  "filters_json": "[{\"doctype\":\"Media Invoice\",\"fieldname\":\"status\",\"filter_type\":\"Document\",\"value\":\"Submitted\",\"label\":\"Status\"}]",
+  "function": "Count",
+  "is_public": 1,
+  "is_standard": 1,
+  "label": "Open Media Invoices",
+  "module": "Media Advertising",
+  "name": "Open Media Invoices",
+  "owner": "Administrator",
+  "show_percentage_stats": 0
+}

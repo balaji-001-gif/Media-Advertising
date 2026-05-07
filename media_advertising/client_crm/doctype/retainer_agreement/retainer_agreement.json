@@ -1,0 +1,40 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "is_submittable": 1,
+  "field_order": [
+    "naming_series","agreement_title","client","section_break_1",
+    "start_date","end_date","status","column_break_1",
+    "monthly_fee","currency","section_break_2",
+    "scope_of_work","payment_terms","notes","amended_from"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"RET-.YYYY.-"},
+    {"fieldname":"agreement_title","fieldtype":"Data","label":"Agreement Title","reqd":1,"in_list_view":1},
+    {"fieldname":"client","fieldtype":"Link","label":"Client","options":"Agency Client","reqd":1,"in_list_view":1},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"start_date","fieldtype":"Date","label":"Start Date","reqd":1},
+    {"fieldname":"end_date","fieldtype":"Date","label":"End Date","reqd":1},
+    {"fieldname":"status","fieldtype":"Select","label":"Status","options":"\nDraft\nActive\nExpired\nTerminated","default":"Draft","in_list_view":1},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"monthly_fee","fieldtype":"Currency","label":"Monthly Fee","reqd":1},
+    {"fieldname":"currency","fieldtype":"Link","label":"Currency","options":"Currency","default":"INR"},
+    {"fieldname":"section_break_2","fieldtype":"Section Break"},
+    {"fieldname":"scope_of_work","fieldtype":"Text Editor","label":"Scope of Work"},
+    {"fieldname":"payment_terms","fieldtype":"Text","label":"Payment Terms"},
+    {"fieldname":"notes","fieldtype":"Text","label":"Notes"},
+    {"fieldname":"amended_from","fieldtype":"Link","label":"Amended From","no_copy":1,"options":"Retainer Agreement","read_only":1}
+  ],
+  "module": "Client Crm",
+  "name": "Retainer Agreement",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","submit":1,"cancel":1,"write":1},
+    {"create":1,"read":1,"report":1,"role":"All","write":1}
+  ],
+  "title_field": "agreement_title",
+  "track_changes": 1
+}

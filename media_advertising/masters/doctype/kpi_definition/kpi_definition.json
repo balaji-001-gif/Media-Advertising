@@ -1,0 +1,30 @@
+{
+  "actions": [],
+  "autoname": "field:kpi_name",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "kpi_name","kpi_code","media_category","section_break_1",
+    "kpi_type","formula","unit","description","is_active"
+  ],
+  "fields": [
+    {"fieldname":"kpi_name","fieldtype":"Data","label":"KPI Name","reqd":1,"unique":1,"in_list_view":1},
+    {"fieldname":"kpi_code","fieldtype":"Data","label":"KPI Code","in_list_view":1},
+    {"fieldname":"media_category","fieldtype":"Link","label":"Media Category","options":"Media Category"},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"kpi_type","fieldtype":"Select","label":"KPI Type","options":"\nReach\nEngagement\nConversion\nCost\nAwareness\nROI"},
+    {"fieldname":"formula","fieldtype":"Data","label":"Formula / Calculation"},
+    {"fieldname":"unit","fieldtype":"Data","label":"Unit (e.g. %, GRPs, CPM)"},
+    {"fieldname":"description","fieldtype":"Text","label":"Description"},
+    {"fieldname":"is_active","fieldtype":"Check","label":"Is Active","default":"1"}
+  ],
+  "module": "Masters",
+  "name": "KPI Definition",
+  "naming_rule": "By fieldname",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"read":1,"report":1,"role":"All"}
+  ],
+  "title_field": "kpi_name"
+}

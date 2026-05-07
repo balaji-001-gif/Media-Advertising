@@ -1,0 +1,2 @@
+include MANIFEST.in
+recursive-include media_advertising *.json *.js *.css *.html *.py *.md

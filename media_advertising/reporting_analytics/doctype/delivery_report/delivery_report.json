@@ -1,0 +1,42 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series","report_title","campaign","ad_booking","section_break_1",
+    "delivery_date","media_channel","section_break_2",
+    "booked_impressions","delivered_impressions","delivery_pct","column_break_1",
+    "booked_grps","delivered_grps","reach","frequency","notes","attachment"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"DR-.YYYY.-"},
+    {"fieldname":"report_title","fieldtype":"Data","label":"Title","reqd":1,"in_list_view":1},
+    {"fieldname":"campaign","fieldtype":"Link","label":"Campaign","options":"Campaign","reqd":1,"in_list_view":1},
+    {"fieldname":"ad_booking","fieldtype":"Link","label":"Ad Booking","options":"Ad Booking"},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"delivery_date","fieldtype":"Date","label":"Delivery Date","default":"Today"},
+    {"fieldname":"media_channel","fieldtype":"Link","label":"Media Channel","options":"Media Channel"},
+    {"fieldname":"section_break_2","fieldtype":"Section Break"},
+    {"fieldname":"booked_impressions","fieldtype":"Int","label":"Booked Impressions"},
+    {"fieldname":"delivered_impressions","fieldtype":"Int","label":"Delivered Impressions"},
+    {"fieldname":"delivery_pct","fieldtype":"Percent","label":"Delivery %","read_only":1},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"booked_grps","fieldtype":"Float","label":"Booked GRPs"},
+    {"fieldname":"delivered_grps","fieldtype":"Float","label":"Delivered GRPs"},
+    {"fieldname":"reach","fieldtype":"Int","label":"Reach"},
+    {"fieldname":"frequency","fieldtype":"Float","label":"Frequency"},
+    {"fieldname":"notes","fieldtype":"Text","label":"Notes"},
+    {"fieldname":"attachment","fieldtype":"Attach","label":"POD Document"}
+  ],
+  "module": "Reporting Analytics",
+  "name": "Delivery Report",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"create":1,"read":1,"report":1,"role":"All","write":1}
+  ],
+  "title_field": "report_title",
+  "track_changes": 1
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "doctype": "KPI Definition",
+    "kpi_name": "GRP",
+    "kpi_code": "GRP",
+    "kpi_type": "Reach",
+    "formula": "Reach% x Frequency",
+    "unit": "GRPs",
+    "is_active": 1,
+    "name": "GRP"
+  },
+  {
+    "doctype": "KPI Definition",
+    "kpi_name": "CPM",
+    "kpi_code": "CPM",
+    "kpi_type": "Cost",
+    "formula": "(Spend / Impressions) x 1000",
+    "unit": "INR/1000",
+    "is_active": 1,
+    "name": "CPM"
+  },
+  {
+    "doctype": "KPI Definition",
+    "kpi_name": "CPC",
+    "kpi_code": "CPC",
+    "kpi_type": "Cost",
+    "formula": "Spend / Clicks",
+    "unit": "INR",
+    "is_active": 1,
+    "name": "CPC"
+  },
+  {
+    "doctype": "KPI Definition",
+    "kpi_name": "CTR",
+    "kpi_code": "CTR",
+    "kpi_type": "Engagement",
+    "formula": "(Clicks / Impressions) x 100",
+    "unit": "%",
+    "is_active": 1,
+    "name": "CTR"
+  },
+  {
+    "doctype": "KPI Definition",
+    "kpi_name": "Reach",
+    "kpi_code": "REACH",
+    "kpi_type": "Reach",
+    "formula": "Unique Users Exposed",
+    "unit": "Persons",
+    "is_active": 1,
+    "name": "Reach"
+  },
+  {
+    "doctype": "KPI Definition",
+    "kpi_name": "Frequency",
+    "kpi_code": "FREQ",
+    "kpi_type": "Reach",
+    "formula": "GRPs / Reach%",
+    "unit": "Times",
+    "is_active": 1,
+    "name": "Frequency"
+  },
+  {
+    "doctype": "KPI Definition",
+    "kpi_name": "ROAS",
+    "kpi_code": "ROAS",
+    "kpi_type": "ROI",
+    "formula": "Revenue / Ad Spend",
+    "unit": "x",
+    "is_active": 1,
+    "name": "ROAS"
+  }
+]

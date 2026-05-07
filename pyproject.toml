@@ -1,0 +1,15 @@
+[project]
+name = "media_advertising"
+authors = [{ name = "Your Company", email = "dev@yourcompany.com" }]
+description = "Media & Advertising ERP"
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = ["frappe", "erpnext"]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.module]
+name = "media_advertising"

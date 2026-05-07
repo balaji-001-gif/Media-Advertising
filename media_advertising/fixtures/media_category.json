@@ -1,0 +1,79 @@
+[
+  {
+    "doctype": "Media Category",
+    "category_name": "Television",
+    "category_type": "Broadcast",
+    "is_active": 1,
+    "name": "Television"
+  },
+  {
+    "doctype": "Media Category",
+    "category_name": "Radio",
+    "category_type": "Radio",
+    "is_active": 1,
+    "name": "Radio"
+  },
+  {
+    "doctype": "Media Category",
+    "category_name": "Print - Newspaper",
+    "category_type": "Print",
+    "is_active": 1,
+    "name": "Print - Newspaper"
+  },
+  {
+    "doctype": "Media Category",
+    "category_name": "Print - Magazine",
+    "category_type": "Print",
+    "is_active": 1,
+    "name": "Print - Magazine"
+  },
+  {
+    "doctype": "Media Category",
+    "category_name": "Digital - Display",
+    "category_type": "Digital",
+    "is_active": 1,
+    "name": "Digital - Display"
+  },
+  {
+    "doctype": "Media Category",
+    "category_name": "Digital - Video",
+    "category_type": "Digital",
+    "is_active": 1,
+    "name": "Digital - Video"
+  },
+  {
+    "doctype": "Media Category",
+    "category_name": "Digital - Social",
+    "category_type": "Digital",
+    "is_active": 1,
+    "name": "Digital - Social"
+  },
+  {
+    "doctype": "Media Category",
+    "category_name": "Digital - Search",
+    "category_type": "Digital",
+    "is_active": 1,
+    "name": "Digital - Search"
+  },
+  {
+    "doctype": "Media Category",
+    "category_name": "OOH - Hoarding",
+    "category_type": "OOH",
+    "is_active": 1,
+    "name": "OOH - Hoarding"
+  },
+  {
+    "doctype": "Media Category",
+    "category_name": "OOH - Transit",
+    "category_type": "OOH",
+    "is_active": 1,
+    "name": "OOH - Transit"
+  },
+  {
+    "doctype": "Media Category",
+    "category_name": "Cinema",
+    "category_type": "Cinema",
+    "is_active": 1,
+    "name": "Cinema"
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series","campaign","client","section_break_1",
+    "total_budget","currency","column_break_1",
+    "actual_spend","remaining_budget","utilisation_pct","section_break_2",
+    "budget_items"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"CBUD-.YYYY.-"},
+    {"fieldname":"campaign","fieldtype":"Link","label":"Campaign","options":"Campaign","reqd":1,"in_list_view":1},
+    {"fieldname":"client","fieldtype":"Link","label":"Client","options":"Agency Client","in_list_view":1},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"total_budget","fieldtype":"Currency","label":"Total Budget","reqd":1},
+    {"fieldname":"currency","fieldtype":"Link","label":"Currency","options":"Currency","default":"INR"},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"actual_spend","fieldtype":"Currency","label":"Actual Spend","read_only":1},
+    {"fieldname":"remaining_budget","fieldtype":"Currency","label":"Remaining Budget","read_only":1},
+    {"fieldname":"utilisation_pct","fieldtype":"Percent","label":"Utilisation %","read_only":1},
+    {"fieldname":"section_break_2","fieldtype":"Section Break"},
+    {"fieldname":"budget_items","fieldtype":"Table","label":"Budget by Channel","options":"Campaign Budget Item"}
+  ],
+  "module": "Billing Finance",
+  "name": "Campaign Budget",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"create":1,"read":1,"report":1,"role":"Accounts Manager","write":1},
+    {"read":1,"report":1,"role":"All"}
+  ],
+  "title_field": "campaign",
+  "track_changes": 1
+}

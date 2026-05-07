@@ -1,0 +1,19 @@
+{
+  "chart_name": "Monthly Invoice Value",
+  "chart_type": "Sum",
+  "creation": "2024-01-01 00:00:00",
+  "doctype": "Dashboard Chart",
+  "document_type": "Media Invoice",
+  "filters_json": "[{\"doctype\":\"Media Invoice\",\"fieldname\":\"docstatus\",\"filter_type\":\"Document\",\"value\":\"1\",\"label\":\"Is Submitted\"}]",
+  "based_on": "invoice_date",
+  "value_based_on": "total_amount",
+  "is_public": 1,
+  "is_standard": 1,
+  "module": "Media Advertising",
+  "name": "Monthly Invoice Value",
+  "owner": "Administrator",
+  "time_interval": "Monthly",
+  "timeseries": 1,
+  "type": "Bar",
+  "use_report_chart": 0
+}

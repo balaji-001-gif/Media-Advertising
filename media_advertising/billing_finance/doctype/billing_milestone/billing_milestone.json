@@ -1,0 +1,34 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series","milestone_name","campaign","client","section_break_1",
+    "due_date","amount","status","column_break_1","invoiced","invoice_ref","notes"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"BMS-.YYYY.-"},
+    {"fieldname":"milestone_name","fieldtype":"Data","label":"Milestone Name","reqd":1,"in_list_view":1},
+    {"fieldname":"campaign","fieldtype":"Link","label":"Campaign","options":"Campaign","reqd":1,"in_list_view":1},
+    {"fieldname":"client","fieldtype":"Link","label":"Client","options":"Agency Client","in_list_view":1},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"due_date","fieldtype":"Date","label":"Due Date","reqd":1},
+    {"fieldname":"amount","fieldtype":"Currency","label":"Amount","reqd":1},
+    {"fieldname":"status","fieldtype":"Select","label":"Status","options":"\nPending\nDue\nInvoiced\nPaid","default":"Pending","in_list_view":1},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"invoiced","fieldtype":"Check","label":"Invoiced"},
+    {"fieldname":"invoice_ref","fieldtype":"Link","label":"Media Invoice","options":"Media Invoice"},
+    {"fieldname":"notes","fieldtype":"Text","label":"Notes"}
+  ],
+  "module": "Billing Finance",
+  "name": "Billing Milestone",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"read":1,"report":1,"role":"All"}
+  ],
+  "title_field": "milestone_name",
+  "track_changes": 1
+}

@@ -1,0 +1,87 @@
+[
+  {
+    "doctype": "Ad Format",
+    "format_name": "30s TVC",
+    "duration_seconds": 30,
+    "is_active": 1,
+    "name": "30s TVC"
+  },
+  {
+    "doctype": "Ad Format",
+    "format_name": "60s TVC",
+    "duration_seconds": 60,
+    "is_active": 1,
+    "name": "60s TVC"
+  },
+  {
+    "doctype": "Ad Format",
+    "format_name": "15s Digital Video",
+    "duration_seconds": 15,
+    "is_active": 1,
+    "name": "15s Digital Video"
+  },
+  {
+    "doctype": "Ad Format",
+    "format_name": "6s Bumper Ad",
+    "duration_seconds": 6,
+    "is_active": 1,
+    "name": "6s Bumper Ad"
+  },
+  {
+    "doctype": "Ad Format",
+    "format_name": "Leaderboard Banner",
+    "dimensions": "728x90",
+    "is_active": 1,
+    "name": "Leaderboard Banner"
+  },
+  {
+    "doctype": "Ad Format",
+    "format_name": "Rectangle Banner",
+    "dimensions": "300x250",
+    "is_active": 1,
+    "name": "Rectangle Banner"
+  },
+  {
+    "doctype": "Ad Format",
+    "format_name": "Half Page Banner",
+    "dimensions": "300x600",
+    "is_active": 1,
+    "name": "Half Page Banner"
+  },
+  {
+    "doctype": "Ad Format",
+    "format_name": "Full Page Print",
+    "is_active": 1,
+    "name": "Full Page Print"
+  },
+  {
+    "doctype": "Ad Format",
+    "format_name": "Half Page Print",
+    "is_active": 1,
+    "name": "Half Page Print"
+  },
+  {
+    "doctype": "Ad Format",
+    "format_name": "Social Post - Static",
+    "is_active": 1,
+    "name": "Social Post - Static"
+  },
+  {
+    "doctype": "Ad Format",
+    "format_name": "Social Post - Carousel",
+    "is_active": 1,
+    "name": "Social Post - Carousel"
+  },
+  {
+    "doctype": "Ad Format",
+    "format_name": "Sponsored Content",
+    "is_active": 1,
+    "name": "Sponsored Content"
+  },
+  {
+    "doctype": "Ad Format",
+    "format_name": "OOH 40x20 ft",
+    "is_active": 1,
+    "name": "OOH 40x20 ft"
+  }
+]

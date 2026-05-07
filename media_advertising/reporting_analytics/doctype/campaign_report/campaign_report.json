@@ -1,0 +1,51 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series","report_title","campaign","client","section_break_1",
+    "report_date","report_period_from","report_period_to","prepared_by","column_break_1",
+    "status","section_break_2",
+    "total_impressions","total_reach","grp_achieved","cpm","section_break_3",
+    "budget_spent","budget_allocated","roi","section_break_4",
+    "executive_summary","key_findings","recommendations","attachment"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"RPT-.YYYY.-"},
+    {"fieldname":"report_title","fieldtype":"Data","label":"Report Title","reqd":1,"in_list_view":1},
+    {"fieldname":"campaign","fieldtype":"Link","label":"Campaign","options":"Campaign","reqd":1,"in_list_view":1},
+    {"fieldname":"client","fieldtype":"Link","label":"Client","options":"Agency Client"},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"report_date","fieldtype":"Date","label":"Report Date","default":"Today"},
+    {"fieldname":"report_period_from","fieldtype":"Date","label":"Period From"},
+    {"fieldname":"report_period_to","fieldtype":"Date","label":"Period To"},
+    {"fieldname":"prepared_by","fieldtype":"Link","label":"Prepared By","options":"User"},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"status","fieldtype":"Select","label":"Status","options":"\nDraft\nReview\nFinalised\nShared","default":"Draft","in_list_view":1},
+    {"fieldname":"section_break_2","fieldtype":"Section Break","label":"Performance Metrics"},
+    {"fieldname":"total_impressions","fieldtype":"Int","label":"Total Impressions"},
+    {"fieldname":"total_reach","fieldtype":"Int","label":"Total Reach"},
+    {"fieldname":"grp_achieved","fieldtype":"Float","label":"GRPs Achieved"},
+    {"fieldname":"cpm","fieldtype":"Currency","label":"CPM"},
+    {"fieldname":"section_break_3","fieldtype":"Section Break","label":"Financial Summary"},
+    {"fieldname":"budget_spent","fieldtype":"Currency","label":"Budget Spent"},
+    {"fieldname":"budget_allocated","fieldtype":"Currency","label":"Budget Allocated"},
+    {"fieldname":"roi","fieldtype":"Percent","label":"ROI %"},
+    {"fieldname":"section_break_4","fieldtype":"Section Break"},
+    {"fieldname":"executive_summary","fieldtype":"Text Editor","label":"Executive Summary"},
+    {"fieldname":"key_findings","fieldtype":"Text Editor","label":"Key Findings"},
+    {"fieldname":"recommendations","fieldtype":"Text Editor","label":"Recommendations"},
+    {"fieldname":"attachment","fieldtype":"Attach","label":"Report Document"}
+  ],
+  "module": "Reporting Analytics",
+  "name": "Campaign Report",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"create":1,"read":1,"report":1,"role":"All","write":1}
+  ],
+  "title_field": "report_title",
+  "track_changes": 1
+}

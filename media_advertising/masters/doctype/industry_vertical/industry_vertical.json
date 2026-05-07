@@ -1,0 +1,21 @@
+{
+  "actions": [],
+  "autoname": "field:vertical_name",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": ["vertical_name","description","is_active"],
+  "fields": [
+    {"fieldname":"vertical_name","fieldtype":"Data","label":"Vertical Name","reqd":1,"unique":1,"in_list_view":1},
+    {"fieldname":"description","fieldtype":"Text","label":"Description"},
+    {"fieldname":"is_active","fieldtype":"Check","label":"Is Active","default":"1"}
+  ],
+  "module": "Masters",
+  "name": "Industry Vertical",
+  "naming_rule": "By fieldname",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"read":1,"report":1,"role":"All"}
+  ],
+  "title_field": "vertical_name"
+}

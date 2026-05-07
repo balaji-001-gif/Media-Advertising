@@ -1,0 +1,17 @@
+{
+  "attach_print": 0,
+  "channel": "System Notification",
+  "condition": "doc.utilisation_pct > 90",
+  "creation": "2024-01-01 00:00:00.000000",
+  "doctype": "Notification",
+  "document_type": "Campaign Budget",
+  "enabled": 1,
+  "event": "Value Change",
+  "message": "<p>Campaign Budget for <b>{{ doc.campaign }}</b> has reached <b>{{ doc.utilisation_pct }}%</b> utilisation.</p><p>Remaining budget: {{ doc.remaining_budget }}</p>",
+  "name": "Budget Overrun Alert",
+  "owner": "Administrator",
+  "recipients": [{"cc": "","condition": "","receiver_by_role": "Accounts Manager"}],
+  "send_system_notification": 1,
+  "subject": "Budget Alert: {{ doc.campaign }} at {{ doc.utilisation_pct }}%",
+  "value_changed": "utilisation_pct"
+}

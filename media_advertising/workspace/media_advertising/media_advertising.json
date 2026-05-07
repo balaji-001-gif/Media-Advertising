@@ -1,0 +1,57 @@
+{
+  "charts": [],
+  "content": "[{\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Campaign\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Agency Client\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Media Plan\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Ad Booking\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Media Invoice\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Proposal\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Campaign Brief\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Creative Asset\", \"col\": 3}}]",
+  "doctype": "Workspace",
+  "extends": "",
+  "icon": "bullhorn",
+  "is_hidden": 0,
+  "label": "Media Advertising",
+  "links": [],
+  "module": "Media Advertising",
+  "name": "Media Advertising",
+  "public": 1,
+  "roles": [],
+  "shortcuts": [
+    {
+      "label": "Campaign",
+      "link_to": "Campaign",
+      "type": "DocType"
+    },
+    {
+      "label": "Agency Client",
+      "link_to": "Agency Client",
+      "type": "DocType"
+    },
+    {
+      "label": "Media Plan",
+      "link_to": "Media Plan",
+      "type": "DocType"
+    },
+    {
+      "label": "Ad Booking",
+      "link_to": "Ad Booking",
+      "type": "DocType"
+    },
+    {
+      "label": "Media Invoice",
+      "link_to": "Media Invoice",
+      "type": "DocType"
+    },
+    {
+      "label": "Proposal",
+      "link_to": "Proposal",
+      "type": "DocType"
+    },
+    {
+      "label": "Campaign Brief",
+      "link_to": "Campaign Brief",
+      "type": "DocType"
+    },
+    {
+      "label": "Creative Asset",
+      "link_to": "Creative Asset",
+      "type": "DocType"
+    }
+  ],
+  "title": "Media Advertising"
+}

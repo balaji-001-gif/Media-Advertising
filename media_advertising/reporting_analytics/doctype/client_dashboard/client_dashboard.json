@@ -1,0 +1,33 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series","client","dashboard_date","section_break_1",
+    "active_campaigns","total_spend_ytd","total_invoiced","column_break_1",
+    "pending_approvals","open_briefs","notes"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"CD-.YYYY.-"},
+    {"fieldname":"client","fieldtype":"Link","label":"Client","options":"Agency Client","reqd":1,"in_list_view":1},
+    {"fieldname":"dashboard_date","fieldtype":"Date","label":"As of Date","default":"Today"},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"active_campaigns","fieldtype":"Int","label":"Active Campaigns","read_only":1},
+    {"fieldname":"total_spend_ytd","fieldtype":"Currency","label":"Total Spend YTD","read_only":1},
+    {"fieldname":"total_invoiced","fieldtype":"Currency","label":"Total Invoiced","read_only":1},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"pending_approvals","fieldtype":"Int","label":"Pending Approvals","read_only":1},
+    {"fieldname":"open_briefs","fieldtype":"Int","label":"Open Briefs","read_only":1},
+    {"fieldname":"notes","fieldtype":"Text","label":"Notes"}
+  ],
+  "module": "Reporting Analytics",
+  "name": "Client Dashboard",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"read":1,"report":1,"role":"All"}
+  ],
+  "track_changes": 1
+}

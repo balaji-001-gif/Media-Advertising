@@ -1,0 +1,34 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series","campaign","media_invoice","section_break_1",
+    "gross_media_value","commission_pct","commission_amount","column_break_1",
+    "entry_date","status","notes"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"COM-.YYYY.-"},
+    {"fieldname":"campaign","fieldtype":"Link","label":"Campaign","options":"Campaign","reqd":1,"in_list_view":1},
+    {"fieldname":"media_invoice","fieldtype":"Link","label":"Media Invoice","options":"Media Invoice"},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"gross_media_value","fieldtype":"Currency","label":"Gross Media Value","reqd":1},
+    {"fieldname":"commission_pct","fieldtype":"Percent","label":"Commission %","default":"15"},
+    {"fieldname":"commission_amount","fieldtype":"Currency","label":"Commission Amount","read_only":1,"in_list_view":1},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"entry_date","fieldtype":"Date","label":"Entry Date","default":"Today"},
+    {"fieldname":"status","fieldtype":"Select","label":"Status","options":"\nDraft\nPosted\nCancelled","default":"Draft"},
+    {"fieldname":"notes","fieldtype":"Text","label":"Notes"}
+  ],
+  "module": "Billing Finance",
+  "name": "Commission Entry",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"create":1,"read":1,"report":1,"role":"Accounts Manager","write":1}
+  ],
+  "title_field": "campaign",
+  "track_changes": 1
+}

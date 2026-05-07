@@ -1,0 +1,37 @@
+{
+  "actions": [],
+  "autoname": "naming_series:",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series","approval_title","client","campaign","section_break_1",
+    "approval_type","approval_date","status","column_break_1",
+    "approved_by","approved_on","section_break_2","remarks","attachment"
+  ],
+  "fields": [
+    {"fieldname":"naming_series","fieldtype":"Series","label":"Series","options":"APPV-.YYYY.-"},
+    {"fieldname":"approval_title","fieldtype":"Data","label":"Approval Title","reqd":1,"in_list_view":1},
+    {"fieldname":"client","fieldtype":"Link","label":"Client","options":"Agency Client","reqd":1,"in_list_view":1},
+    {"fieldname":"campaign","fieldtype":"Link","label":"Campaign","options":"Campaign"},
+    {"fieldname":"section_break_1","fieldtype":"Section Break"},
+    {"fieldname":"approval_type","fieldtype":"Select","label":"Approval Type","options":"\nCreative Approval\nMedia Plan Approval\nBudget Approval\nCampaign Sign-off"},
+    {"fieldname":"approval_date","fieldtype":"Date","label":"Requested On","default":"Today"},
+    {"fieldname":"status","fieldtype":"Select","label":"Status","options":"\nPending\nApproved\nRejected\nRevision Requested","default":"Pending","in_list_view":1},
+    {"fieldname":"column_break_1","fieldtype":"Column Break"},
+    {"fieldname":"approved_by","fieldtype":"Data","label":"Approved By (Client Name)"},
+    {"fieldname":"approved_on","fieldtype":"Date","label":"Approved On"},
+    {"fieldname":"section_break_2","fieldtype":"Section Break"},
+    {"fieldname":"remarks","fieldtype":"Text Editor","label":"Remarks"},
+    {"fieldname":"attachment","fieldtype":"Attach","label":"Approval Document"}
+  ],
+  "module": "Client Crm",
+  "name": "Client Approval",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {"create":1,"delete":1,"read":1,"report":1,"role":"System Manager","write":1},
+    {"create":1,"read":1,"report":1,"role":"All","write":1}
+  ],
+  "title_field": "approval_title",
+  "track_changes": 1
+}

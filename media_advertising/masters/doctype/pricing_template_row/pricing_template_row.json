@@ -1,0 +1,16 @@
+{
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "istable": 1,
+  "field_order": ["min_quantity","max_quantity","rate","discount_pct"],
+  "fields": [
+    {"fieldname":"min_quantity","fieldtype":"Int","label":"Min Qty","in_list_view":1},
+    {"fieldname":"max_quantity","fieldtype":"Int","label":"Max Qty","in_list_view":1},
+    {"fieldname":"rate","fieldtype":"Currency","label":"Rate","in_list_view":1},
+    {"fieldname":"discount_pct","fieldtype":"Percent","label":"Discount %"}
+  ],
+  "module": "Masters",
+  "name": "Pricing Template Row",
+  "owner": "Administrator",
+  "permissions": []
+}

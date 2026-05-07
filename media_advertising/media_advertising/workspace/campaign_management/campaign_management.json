@@ -1,0 +1,9 @@
+{
+ "doctype": "Workspace",
+ "name": "Campaign Management",
+ "title": "Campaign Management",
+ "module": "Campaign Management",
+ "public": 1,
+ "is_hidden": 0,
+ "label": "Campaign Management"
+}
