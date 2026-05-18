@@ -1,0 +1,23 @@
+{
+  "charts": [],
+  "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"Campaign Management\",\"col\":4}}]",
+  "doctype": "Workspace",
+  "extends": "",
+  "icon": "bullhorn",
+  "is_hidden": 0,
+  "label": "Campaign Management",
+  "module": "Campaign Management",
+  "name": "Campaign Management",
+  "public": 1,
+  "roles": [],
+  "links": [
+    {"hidden": 0, "is_query_report": 0, "label": "Campaign Management", "onboard": 0, "type": "Card Break"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Campaign", "link_to": "Campaign", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Campaign Brief", "link_to": "Campaign Brief", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Campaign Phase", "link_to": "Campaign Phase", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Media Plan", "link_to": "Media Plan", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Ad Placement", "link_to": "Ad Placement", "link_type": "DocType", "onboard": 0, "type": "Link"}
+  ],
+  "shortcuts": [],
+  "title": "Campaign Management"
+}

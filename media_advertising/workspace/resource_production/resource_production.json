@@ -1,0 +1,22 @@
+{
+  "charts": [],
+  "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"Resource & Production\",\"col\":4}}]",
+  "doctype": "Workspace",
+  "extends": "",
+  "icon": "calendar",
+  "is_hidden": 0,
+  "label": "Resource Production",
+  "module": "Resource Production",
+  "name": "Resource Production",
+  "public": 1,
+  "roles": [],
+  "links": [
+    {"hidden": 0, "is_query_report": 0, "label": "Resource & Production", "onboard": 0, "type": "Card Break"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Production Job", "link_to": "Production Job", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Resource Allocation", "link_to": "Resource Allocation", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Timesheet Entry", "link_to": "Timesheet Entry", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Freelancer Contract", "link_to": "Freelancer Contract", "link_type": "DocType", "onboard": 0, "type": "Link"}
+  ],
+  "shortcuts": [],
+  "title": "Resource Production"
+}

@@ -1,0 +1,23 @@
+{
+  "charts": [],
+  "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"Client & CRM\",\"col\":4}}]",
+  "doctype": "Workspace",
+  "extends": "",
+  "icon": "users",
+  "is_hidden": 0,
+  "label": "Client CRM",
+  "module": "Client CRM",
+  "name": "Client CRM",
+  "public": 1,
+  "roles": [],
+  "links": [
+    {"hidden": 0, "is_query_report": 0, "label": "Client & CRM", "onboard": 0, "type": "Card Break"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Agency Client", "link_to": "Agency Client", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Client Brief", "link_to": "Client Brief", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Client Approval", "link_to": "Client Approval", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Proposal", "link_to": "Proposal", "link_type": "DocType", "onboard": 0, "type": "Link"},
+    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Retainer Agreement", "link_to": "Retainer Agreement", "link_type": "DocType", "onboard": 0, "type": "Link"}
+  ],
+  "shortcuts": [],
+  "title": "Client CRM"
+}
