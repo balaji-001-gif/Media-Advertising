@@ -30,15 +30,16 @@ def run():
     frappe.db.commit()
     print("✅ All Module Def records verified and restored!")
     
-    # 2. TARGETED CACHE RELOAD: Only update media_advertising modules list in memory!
-    # This keeps frappe, erpnext, and other apps completely untouched and functioning perfectly!
+    # 2. TARGETED CACHE RELOAD WITH SCRUBBED NAMES:
+    # We populate the in-memory cache with the scrubbed, snake_case directory names (e.g. reporting_analytics)
+    # This allows python to import the folders perfectly!
     if hasattr(frappe.local, "app_modules") and isinstance(frappe.local.app_modules, dict):
         print("Safely reloading in-memory app modules cache for media_advertising...")
         try:
-            modules_list = frappe.get_module_list("media_advertising")
-            if modules_list:
-                frappe.local.app_modules["media_advertising"] = modules_list
-                print("✅ In-memory app modules for media_advertising successfully reloaded!")
+            # Convert display names like 'Reporting Analytics' to 'reporting_analytics'
+            scrubbed_modules = [frappe.scrub(m) for m in modules]
+            frappe.local.app_modules["media_advertising"] = scrubbed_modules
+            print(f"✅ In-memory app modules for media_advertising successfully reloaded: {scrubbed_modules}")
         except Exception as e:
             print(f"⚠️ Failed to load modules for media_advertising: {str(e)}")
         
