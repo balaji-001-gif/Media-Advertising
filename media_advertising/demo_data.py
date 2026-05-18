@@ -119,7 +119,40 @@ def create_demo_data():
             doc.media_category = cat
             doc.insert(ignore_permissions=True)
 
-    # 6. Populate Agency Client (12 premium entries)
+    # 6. Populate Ad Slot (12 entries to link with bookings)
+    print("Populating Ad Slots...")
+    created_slots = []
+    slot_names = [
+        "Google Premium Header banner",
+        "YouTube Non-skippable Slot A",
+        "Star Sports Primetime Slot 1",
+        "TOI Front Page Bottom Quarter",
+        "Red FM Evening Drive Slot",
+        "Billboard HSR Layout Metro",
+        "FB Carousel Ad Slot Prime",
+        "Insta Influencer Story Slot",
+        "PVR Cinema Interval Slide",
+        "LinkedIn Sponsored post slot",
+        "Google Display sidebar banner",
+        "YouTube Midroll Spot 2"
+    ]
+    for i, name in enumerate(slot_names):
+        chan = channels[i % len(channels)][0]
+        fmt = formats[i % len(formats)][0]
+        if not frappe.db.exists("Ad Slot", {"slot_name": name}):
+            doc = frappe.new_doc("Ad Slot")
+            doc.naming_series = "SLOT-.YYYY.-"
+            doc.slot_name = name
+            doc.media_channel = chan
+            doc.ad_format = fmt
+            doc.rate = 5000 + (i * 1000)
+            doc.availability_status = "Available"
+            doc.insert(ignore_permissions=True)
+            created_slots.append(doc.name)
+        else:
+            created_slots.append(frappe.db.get_value("Ad Slot", {"slot_name": name}, "name"))
+
+    # 7. Populate Agency Client (12 premium entries)
     clients_data = [
         ("Tesla India", "Automotive", "tesla.india@tesla.com", "+919988776611", "Whitefield, Bangalore"),
         ("Unilever Group", "FMCG", "marketing@unilever.com", "+919988776612", "Andheri East, Mumbai"),
@@ -152,7 +185,7 @@ def create_demo_data():
         else:
             created_clients.append(frappe.db.get_value("Agency Client", {"client_name": name}, "name"))
 
-    # 7. Populate Client Brief (12 entries)
+    # 8. Populate Client Brief (12 entries)
     print("Populating Client Briefs...")
     created_briefs = []
     brief_titles = [
@@ -190,19 +223,39 @@ def create_demo_data():
         else:
             created_briefs.append(frappe.db.get_value("Client Brief", {"brief_title": title}, "name"))
 
-    # 8. Populate Campaign (12 entries)
+    # 9. Populate Campaign Brief (12 entries - required by Campaign linkage)
+    print("Populating Campaign Briefs...")
+    created_camp_briefs = []
+    for i, title in enumerate(brief_titles):
+        client_name = created_clients[i]
+        if not frappe.db.exists("Campaign Brief", {"brief_title": title}):
+            doc = frappe.new_doc("Campaign Brief")
+            doc.naming_series = "BRIEF-.YYYY.-"
+            doc.brief_title = title
+            doc.client = client_name
+            doc.brief_date = current_date
+            doc.due_date = add_days(current_date, 15)
+            doc.status = "Approved"
+            doc.objectives = f"<p>Campaign objectives for {title}.</p>"
+            doc.budget_indication = budgets[i]
+            doc.insert(ignore_permissions=True)
+            created_camp_briefs.append(doc.name)
+        else:
+            created_camp_briefs.append(frappe.db.get_value("Campaign Brief", {"brief_title": title}, "name"))
+
+    # 10. Populate Campaign (12 entries)
     print("Populating Campaigns...")
     created_campaigns = []
     for i, title in enumerate(brief_titles):
         client_name = created_clients[i]
-        brief_name = created_briefs[i]
+        camp_brief_name = created_camp_briefs[i]
         campaign_name = f"CAM - {title}"
         if not frappe.db.exists("Campaign", {"campaign_name": campaign_name}):
             doc = frappe.new_doc("Campaign")
             doc.naming_series = "CAMP-.YYYY.-"
             doc.campaign_name = campaign_name
             doc.client = client_name
-            doc.campaign_brief = brief_name
+            doc.campaign_brief = camp_brief_name
             doc.start_date = current_date
             doc.end_date = add_days(current_date, 90)
             doc.total_budget = budgets[i]
@@ -217,7 +270,7 @@ def create_demo_data():
         else:
             created_campaigns.append(frappe.db.get_value("Campaign", {"campaign_name": campaign_name}, "name"))
 
-    # 9. Populate Client Approval (12 entries)
+    # 11. Populate Client Approval (12 entries)
     print("Populating Client Approvals...")
     for i, campaign in enumerate(created_campaigns):
         client_name = created_clients[i]
@@ -236,7 +289,7 @@ def create_demo_data():
             doc.remarks = f"<p>The locked campaign structure for {brief_titles[i]} is approved for execution.</p>"
             doc.insert(ignore_permissions=True)
 
-    # 10. Populate Media Plan (12 entries)
+    # 12. Populate Media Plan (12 entries)
     print("Populating Media Plans...")
     created_plans = []
     for i, campaign in enumerate(created_campaigns):
@@ -271,22 +324,29 @@ def create_demo_data():
         else:
             created_plans.append(frappe.db.get_value("Media Plan", {"campaign": campaign}, "name"))
 
-    # 11. Populate Ad Booking (12 entries)
+    # 13. Populate Ad Booking (12 entries)
     print("Populating Ad Bookings...")
     created_bookings = []
     for i, plan in enumerate(created_plans):
         campaign = created_campaigns[i]
+        client_name = created_clients[i]
+        slot = created_slots[i]
+        chan = channels[i % len(channels)][0]
+        fmt = formats[i % len(formats)][0]
         if not frappe.db.exists("Ad Booking", {"media_plan": plan}):
             doc = frappe.new_doc("Ad Booking")
             doc.naming_series = "BOOK-.YYYY.-"
+            doc.booking_title = f"Booking - {brief_titles[i]}"
             doc.campaign = campaign
+            doc.client = client_name
+            doc.ad_slot = slot
             doc.media_plan = plan
-            doc.media_channel = "Google Display Network" if i % 2 == 0 else "YouTube Video Ads"
-            doc.ad_format = "Display Banner" if i % 2 == 0 else "Video Ad (30 sec)"
+            doc.media_channel = chan
+            doc.ad_format = fmt
             doc.booking_date = current_date
             doc.start_date = current_date
             doc.end_date = add_days(current_date, 30)
-            doc.cost = budgets[i] * 0.5
+            doc.negotiated_rate = budgets[i] * 0.5
             doc.status = "Confirmed"
             doc.insert(ignore_permissions=True)
             doc.submit()
@@ -294,7 +354,7 @@ def create_demo_data():
         else:
             created_bookings.append(frappe.db.get_value("Ad Booking", {"media_plan": plan}, "name"))
 
-    # 12. Populate Creative Asset (12 entries)
+    # 14. Populate Creative Asset (12 entries)
     print("Populating Creative Assets...")
     created_creatives = []
     for i, campaign in enumerate(created_campaigns):
@@ -312,22 +372,25 @@ def create_demo_data():
         else:
             created_creatives.append(frappe.db.get_value("Creative Asset", {"asset_name": name}, "name"))
 
-    # 13. Populate Traffic Order (12 entries)
+    # 15. Populate Traffic Order (12 entries)
     print("Populating Traffic Orders...")
     for i, booking in enumerate(created_bookings):
         creative = created_creatives[i]
+        chan = channels[i % len(channels)][0]
         if not frappe.db.exists("Traffic Order", {"ad_booking": booking}):
             doc = frappe.new_doc("Traffic Order")
             doc.naming_series = "TO-.YYYY.-"
             doc.ad_booking = booking
             doc.creative_asset = creative
+            doc.media_channel = chan
             doc.instruction = f"High priority broadcast for campaign {brief_titles[i]}. Ensure exact resolution matching."
             doc.order_date = current_date
+            doc.air_date = current_date
             doc.status = "Active"
             doc.insert(ignore_permissions=True)
             doc.submit()
 
-    # 14. Populate Campaign Budget (12 entries)
+    # 16. Populate Campaign Budget (12 entries)
     print("Populating Campaign Budgets...")
     for i, campaign in enumerate(created_campaigns):
         if not frappe.db.exists("Campaign Budget", {"campaign": campaign}):
@@ -340,18 +403,18 @@ def create_demo_data():
             
             # Append detailed item row
             doc.append("items", {
-                "category": "Media Buying",
+                "media_channel": "Google Display Network" if i % 2 == 0 else "YouTube Video Ads",
                 "allocated_amount": budgets[i] * 0.7
             })
             doc.append("items", {
-                "category": "Creative Production",
+                "media_channel": "Instagram Influencer Post" if i % 2 == 0 else "Facebook Sponsored Ads",
                 "allocated_amount": budgets[i] * 0.3
             })
             
             doc.insert(ignore_permissions=True)
             doc.submit()
 
-    # 15. Populate Media Invoice (12 entries)
+    # 17. Populate Media Invoice (12 entries)
     print("Populating Media Invoices...")
     for i, campaign in enumerate(created_campaigns):
         client = created_clients[i]
@@ -375,7 +438,7 @@ def create_demo_data():
             doc.insert(ignore_permissions=True)
             doc.submit()
 
-    # 16. Populate Production Job (12 entries)
+    # 18. Populate Production Job (12 entries)
     print("Populating Production Jobs...")
     for i, campaign in enumerate(created_campaigns):
         name = f"Job for {brief_titles[i]}"
