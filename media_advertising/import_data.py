@@ -20,7 +20,6 @@ def run():
     ]
     
     print("Checking and restoring missing Module Def records...")
-    recreated = False
     for m in modules:
         if not frappe.db.exists("Module Def", m):
             print(f"🛠️ Creating missing Module Def: {m}")
@@ -28,23 +27,28 @@ def run():
             doc.module_name = m
             doc.app_name = "media_advertising"
             doc.insert(ignore_permissions=True)
-            recreated = True
             
     frappe.db.commit()
     print("✅ All Module Def records verified and restored!")
     
-    # 2. FORCE-CLEAR all in-memory caches in Frappe
-    # This forces the active process to reload the newly created Module Defs immediately!
-    if hasattr(frappe.local, "app_modules"):
-        print("Clearing in-memory app modules cache...")
-        delattr(frappe.local, "app_modules")
+    # 2. SAFE-CLEAR the in-memory app modules dictionary (do NOT delete the attribute itself)
+    # Then re-populate it using Frappe's standard get_app_modules loader!
+    if hasattr(frappe.local, "app_modules") and isinstance(frappe.local.app_modules, dict):
+        print("Safely clearing and reloading in-memory app modules cache...")
+        frappe.local.app_modules.clear()
+        
+        # Load fresh list from database/files
+        try:
+            loaded_modules = frappe.get_app_modules() or {}
+            frappe.local.app_modules.update(loaded_modules)
+            print("✅ In-memory app modules successfully reloaded!")
+        except Exception as e:
+            print(f"⚠️ App modules reload warning: {str(e)}")
         
     frappe.clear_cache()
     frappe.local.cache = {}
-    print("✅ In-memory caches cleared successfully!")
     
     # 3. Programmatically force sync all DocTypes of media_advertising
-    # This builds the DocType tables before the standard migration reaches the fixtures sync!
     print("Force syncing all DocTypes for media_advertising...")
     try:
         sync_for("media_advertising", force=True)
