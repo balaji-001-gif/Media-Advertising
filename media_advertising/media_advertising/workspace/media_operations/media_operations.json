@@ -1,9 +1,95 @@
 {
- "doctype": "Workspace",
- "name": "Media Operations",
- "title": "Media Operations",
- "module": "Media Operations",
- "public": 1,
- "is_hidden": 0,
- "label": "Media Operations"
+  "category": "Modules",
+  "charts": [],
+  "content": "[{\"type\": \"card\", \"data\": {\"card_name\": \"Media Operations\", \"col\": 12}}]",
+  "doctype": "Workspace",
+  "extends": "",
+  "icon": "settings",
+  "is_hidden": 0,
+  "label": "Media Operations",
+  "module": "Media Operations",
+  "name": "Media Operations",
+  "public": 1,
+  "roles": [],
+  "links": [
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Media Operations",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Ad Booking",
+      "link_to": "Ad Booking",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Ad Slot",
+      "link_to": "Ad Slot",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Ad Format",
+      "link_to": "Ad Format",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Traffic Order",
+      "link_to": "Traffic Order",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Creative Asset",
+      "link_to": "Creative Asset",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Media Channel",
+      "link_to": "Media Channel",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Delivery Report",
+      "link_to": "Delivery Report",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ],
+  "shortcuts": [],
+  "title": "Media Operations"
 }

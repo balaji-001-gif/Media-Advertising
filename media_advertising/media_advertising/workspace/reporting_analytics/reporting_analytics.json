@@ -1,9 +1,65 @@
 {
- "doctype": "Workspace",
- "name": "Reporting Analytics",
- "title": "Reporting Analytics",
- "module": "Reporting Analytics",
- "public": 1,
- "is_hidden": 0,
- "label": "Reporting Analytics"
+  "category": "Modules",
+  "charts": [],
+  "content": "[{\"type\": \"card\", \"data\": {\"card_name\": \"Reporting & Analytics\", \"col\": 12}}]",
+  "doctype": "Workspace",
+  "extends": "",
+  "icon": "pie-chart",
+  "is_hidden": 0,
+  "label": "Reporting Analytics",
+  "module": "Reporting Analytics",
+  "name": "Reporting Analytics",
+  "public": 1,
+  "roles": [],
+  "links": [
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Reporting & Analytics",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Campaign Report",
+      "link_to": "Campaign Report",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Budget vs Actual",
+      "link_to": "Budget vs Actual",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Budget vs Actual Report",
+      "link_to": "Budget vs Actual Report",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Media Delivery Report",
+      "link_to": "Media Delivery Report",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ],
+  "shortcuts": [],
+  "title": "Reporting Analytics"
 }

@@ -1,9 +1,75 @@
 {
- "doctype": "Workspace",
- "name": "Billing Finance",
- "title": "Billing Finance",
- "module": "Billing Finance",
- "public": 1,
- "is_hidden": 0,
- "label": "Billing Finance"
+  "category": "Modules",
+  "charts": [],
+  "content": "[{\"type\": \"card\", \"data\": {\"card_name\": \"Billing & Finance\", \"col\": 12}}]",
+  "doctype": "Workspace",
+  "extends": "",
+  "icon": "credit-card",
+  "is_hidden": 0,
+  "label": "Billing Finance",
+  "module": "Billing Finance",
+  "name": "Billing Finance",
+  "public": 1,
+  "roles": [],
+  "links": [
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Billing & Finance",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Media Invoice",
+      "link_to": "Media Invoice",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Campaign Budget",
+      "link_to": "Campaign Budget",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Vendor Bill",
+      "link_to": "Vendor Bill",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Commission Entry",
+      "link_to": "Commission Entry",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "WIP Entry",
+      "link_to": "WIP Entry",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ],
+  "shortcuts": [],
+  "title": "Billing Finance"
 }
