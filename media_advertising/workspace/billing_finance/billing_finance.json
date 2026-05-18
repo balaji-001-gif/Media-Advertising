@@ -1,23 +1,56 @@
 {
+  "category": "Modules",
   "charts": [],
-  "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"Billing & Finance\",\"col\":4}}]",
+  "content": "[{\"id\": \"hd-0\", \"type\": \"header\", \"data\": {\"text\": \"Billing & Finance\", \"col\": 12}}, {\"id\": \"sc-1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Media Invoice\", \"col\": 3}}, {\"id\": \"sc-2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Campaign Budget\", \"col\": 3}}, {\"id\": \"sc-3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vendor Bill\", \"col\": 3}}, {\"id\": \"sc-4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Commission Entry\", \"col\": 3}}, {\"id\": \"sc-5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"WIP Entry\", \"col\": 3}}]",
   "doctype": "Workspace",
-  "extends": "",
-  "icon": "credit-card",
+  "for_user": "",
+  "icon": "uil uil-usd-circle",
   "is_hidden": 0,
   "label": "Billing Finance",
   "module": "Billing Finance",
   "name": "Billing Finance",
   "public": 1,
-  "roles": [],
-  "links": [
-    {"hidden": 0, "is_query_report": 0, "label": "Billing & Finance", "onboard": 0, "type": "Card Break"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Media Invoice", "link_to": "Media Invoice", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Campaign Budget", "link_to": "Campaign Budget", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Vendor Bill", "link_to": "Vendor Bill", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Commission Entry", "link_to": "Commission Entry", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "WIP Entry", "link_to": "WIP Entry", "link_type": "DocType", "onboard": 0, "type": "Link"}
+  "shortcuts": [
+    {
+      "label": "Media Invoice",
+      "link_to": "Media Invoice",
+      "type": "DocType",
+      "name": "sc-1",
+      "color": "Purple",
+      "icon": "uil uil-bill"
+    },
+    {
+      "label": "Campaign Budget",
+      "link_to": "Campaign Budget",
+      "type": "DocType",
+      "name": "sc-2",
+      "color": "Purple",
+      "icon": "uil uil-wallet"
+    },
+    {
+      "label": "Vendor Bill",
+      "link_to": "Vendor Bill",
+      "type": "DocType",
+      "name": "sc-3",
+      "color": "Purple",
+      "icon": "uil uil-receipt"
+    },
+    {
+      "label": "Commission Entry",
+      "link_to": "Commission Entry",
+      "type": "DocType",
+      "name": "sc-4",
+      "color": "Purple",
+      "icon": "uil uil-percentage"
+    },
+    {
+      "label": "WIP Entry",
+      "link_to": "WIP Entry",
+      "type": "DocType",
+      "name": "sc-5",
+      "color": "Purple",
+      "icon": "uil uil-hourglass"
+    }
   ],
-  "shortcuts": [],
   "title": "Billing Finance"
 }

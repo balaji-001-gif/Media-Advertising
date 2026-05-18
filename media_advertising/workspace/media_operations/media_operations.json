@@ -1,25 +1,64 @@
 {
+  "category": "Modules",
   "charts": [],
-  "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"Media Operations\",\"col\":4}}]",
+  "content": "[{\"id\": \"hd-0\", \"type\": \"header\", \"data\": {\"text\": \"Media Operations\", \"col\": 12}}, {\"id\": \"sc-1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Ad Booking\", \"col\": 3}}, {\"id\": \"sc-2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Ad Slot\", \"col\": 3}}, {\"id\": \"sc-3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Ad Format\", \"col\": 3}}, {\"id\": \"sc-4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Traffic Order\", \"col\": 3}}, {\"id\": \"sc-5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Creative Asset\", \"col\": 3}}, {\"id\": \"sc-6\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Media Channel\", \"col\": 3}}]",
   "doctype": "Workspace",
-  "extends": "",
-  "icon": "settings",
+  "for_user": "",
+  "icon": "uil uil-processor",
   "is_hidden": 0,
   "label": "Media Operations",
   "module": "Media Operations",
   "name": "Media Operations",
   "public": 1,
-  "roles": [],
-  "links": [
-    {"hidden": 0, "is_query_report": 0, "label": "Media Operations", "onboard": 0, "type": "Card Break"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Ad Booking", "link_to": "Ad Booking", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Ad Slot", "link_to": "Ad Slot", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Ad Format", "link_to": "Ad Format", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Traffic Order", "link_to": "Traffic Order", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Creative Asset", "link_to": "Creative Asset", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Delivery Report", "link_to": "Delivery Report", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Media Channel", "link_to": "Media Channel", "link_type": "DocType", "onboard": 0, "type": "Link"}
+  "shortcuts": [
+    {
+      "label": "Ad Booking",
+      "link_to": "Ad Booking",
+      "type": "DocType",
+      "name": "sc-1",
+      "color": "Orange",
+      "icon": "uil uil-bookmark"
+    },
+    {
+      "label": "Ad Slot",
+      "link_to": "Ad Slot",
+      "type": "DocType",
+      "name": "sc-2",
+      "color": "Orange",
+      "icon": "uil uil-grids"
+    },
+    {
+      "label": "Ad Format",
+      "link_to": "Ad Format",
+      "type": "DocType",
+      "name": "sc-3",
+      "color": "Orange",
+      "icon": "uil uil-columns"
+    },
+    {
+      "label": "Traffic Order",
+      "link_to": "Traffic Order",
+      "type": "DocType",
+      "name": "sc-4",
+      "color": "Orange",
+      "icon": "uil uil-exchange"
+    },
+    {
+      "label": "Creative Asset",
+      "link_to": "Creative Asset",
+      "type": "DocType",
+      "name": "sc-5",
+      "color": "Orange",
+      "icon": "uil uil-image-v"
+    },
+    {
+      "label": "Media Channel",
+      "link_to": "Media Channel",
+      "type": "DocType",
+      "name": "sc-6",
+      "color": "Orange",
+      "icon": "uil uil-channel"
+    }
   ],
-  "shortcuts": [],
   "title": "Media Operations"
 }

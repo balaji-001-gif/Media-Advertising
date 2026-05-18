@@ -1,23 +1,56 @@
 {
+  "category": "Modules",
   "charts": [],
-  "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"Client & CRM\",\"col\":4}}]",
+  "content": "[{\"id\": \"hd-0\", \"type\": \"header\", \"data\": {\"text\": \"Client & CRM\", \"col\": 12}}, {\"id\": \"sc-1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Agency Client\", \"col\": 3}}, {\"id\": \"sc-2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Client Brief\", \"col\": 3}}, {\"id\": \"sc-3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Client Approval\", \"col\": 3}}, {\"id\": \"sc-4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Proposal\", \"col\": 3}}, {\"id\": \"sc-5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Retainer Agreement\", \"col\": 3}}]",
   "doctype": "Workspace",
-  "extends": "",
-  "icon": "users",
+  "for_user": "",
+  "icon": "uil uil-users-alt",
   "is_hidden": 0,
   "label": "Client CRM",
   "module": "Client CRM",
   "name": "Client CRM",
   "public": 1,
-  "roles": [],
-  "links": [
-    {"hidden": 0, "is_query_report": 0, "label": "Client & CRM", "onboard": 0, "type": "Card Break"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Agency Client", "link_to": "Agency Client", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Client Brief", "link_to": "Client Brief", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Client Approval", "link_to": "Client Approval", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Proposal", "link_to": "Proposal", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Retainer Agreement", "link_to": "Retainer Agreement", "link_type": "DocType", "onboard": 0, "type": "Link"}
+  "shortcuts": [
+    {
+      "label": "Agency Client",
+      "link_to": "Agency Client",
+      "type": "DocType",
+      "name": "sc-1",
+      "color": "Green",
+      "icon": "uil uil-user-check"
+    },
+    {
+      "label": "Client Brief",
+      "link_to": "Client Brief",
+      "type": "DocType",
+      "name": "sc-2",
+      "color": "Green",
+      "icon": "uil uil-notes"
+    },
+    {
+      "label": "Client Approval",
+      "link_to": "Client Approval",
+      "type": "DocType",
+      "name": "sc-3",
+      "color": "Green",
+      "icon": "uil uil-check-circle"
+    },
+    {
+      "label": "Proposal",
+      "link_to": "Proposal",
+      "type": "DocType",
+      "name": "sc-4",
+      "color": "Green",
+      "icon": "uil uil-invoice"
+    },
+    {
+      "label": "Retainer Agreement",
+      "link_to": "Retainer Agreement",
+      "type": "DocType",
+      "name": "sc-5",
+      "color": "Green",
+      "icon": "uil uil-file-contract"
+    }
   ],
-  "shortcuts": [],
   "title": "Client CRM"
 }

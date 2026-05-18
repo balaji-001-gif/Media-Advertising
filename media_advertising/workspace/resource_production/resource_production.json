@@ -1,22 +1,48 @@
 {
+  "category": "Modules",
   "charts": [],
-  "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"Resource & Production\",\"col\":4}}]",
+  "content": "[{\"id\": \"hd-0\", \"type\": \"header\", \"data\": {\"text\": \"Resource & Production\", \"col\": 12}}, {\"id\": \"sc-1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Production Job\", \"col\": 3}}, {\"id\": \"sc-2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Resource Allocation\", \"col\": 3}}, {\"id\": \"sc-3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Timesheet Entry\", \"col\": 3}}, {\"id\": \"sc-4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Freelancer Contract\", \"col\": 3}}]",
   "doctype": "Workspace",
-  "extends": "",
-  "icon": "calendar",
+  "for_user": "",
+  "icon": "uil uil-cog",
   "is_hidden": 0,
   "label": "Resource Production",
   "module": "Resource Production",
   "name": "Resource Production",
   "public": 1,
-  "roles": [],
-  "links": [
-    {"hidden": 0, "is_query_report": 0, "label": "Resource & Production", "onboard": 0, "type": "Card Break"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Production Job", "link_to": "Production Job", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Resource Allocation", "link_to": "Resource Allocation", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Timesheet Entry", "link_to": "Timesheet Entry", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Freelancer Contract", "link_to": "Freelancer Contract", "link_type": "DocType", "onboard": 0, "type": "Link"}
+  "shortcuts": [
+    {
+      "label": "Production Job",
+      "link_to": "Production Job",
+      "type": "DocType",
+      "name": "sc-1",
+      "color": "Red",
+      "icon": "uil uil-wrench"
+    },
+    {
+      "label": "Resource Allocation",
+      "link_to": "Resource Allocation",
+      "type": "DocType",
+      "name": "sc-2",
+      "color": "Red",
+      "icon": "uil uil-users-alt"
+    },
+    {
+      "label": "Timesheet Entry",
+      "link_to": "Timesheet Entry",
+      "type": "DocType",
+      "name": "sc-3",
+      "color": "Red",
+      "icon": "uil uil-clock"
+    },
+    {
+      "label": "Freelancer Contract",
+      "link_to": "Freelancer Contract",
+      "type": "DocType",
+      "name": "sc-4",
+      "color": "Red",
+      "icon": "uil uil-file-contract-sig"
+    }
   ],
-  "shortcuts": [],
   "title": "Resource Production"
 }

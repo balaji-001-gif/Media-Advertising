@@ -1,23 +1,56 @@
 {
+  "category": "Modules",
   "charts": [],
-  "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"Advertising Masters\",\"col\":4}}]",
+  "content": "[{\"id\": \"hd-0\", \"type\": \"header\", \"data\": {\"text\": \"Masters\", \"col\": 12}}, {\"id\": \"sc-1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Industry Vertical\", \"col\": 3}}, {\"id\": \"sc-2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Media Category\", \"col\": 3}}, {\"id\": \"sc-3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"KPI Definition\", \"col\": 3}}, {\"id\": \"sc-4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Pricing Template\", \"col\": 3}}, {\"id\": \"sc-5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Target Audience Profile\", \"col\": 3}}]",
   "doctype": "Workspace",
-  "extends": "",
-  "icon": "database",
+  "for_user": "",
+  "icon": "uil uil-database",
   "is_hidden": 0,
   "label": "Masters",
   "module": "Masters",
   "name": "Masters",
   "public": 1,
-  "roles": [],
-  "links": [
-    {"hidden": 0, "is_query_report": 0, "label": "Advertising Masters", "onboard": 0, "type": "Card Break"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Industry Vertical", "link_to": "Industry Vertical", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Media Category", "link_to": "Media Category", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "KPI Definition", "link_to": "KPI Definition", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Pricing Template", "link_to": "Pricing Template", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Target Audience Profile", "link_to": "Target Audience Profile", "link_type": "DocType", "onboard": 0, "type": "Link"}
+  "shortcuts": [
+    {
+      "label": "Industry Vertical",
+      "link_to": "Industry Vertical",
+      "type": "DocType",
+      "name": "sc-1",
+      "color": "Grey",
+      "icon": "uil uil-building"
+    },
+    {
+      "label": "Media Category",
+      "link_to": "Media Category",
+      "type": "DocType",
+      "name": "sc-2",
+      "color": "Grey",
+      "icon": "uil uil-apps"
+    },
+    {
+      "label": "KPI Definition",
+      "link_to": "KPI Definition",
+      "type": "DocType",
+      "name": "sc-3",
+      "color": "Grey",
+      "icon": "uil uil-award"
+    },
+    {
+      "label": "Pricing Template",
+      "link_to": "Pricing Template",
+      "type": "DocType",
+      "name": "sc-4",
+      "color": "Grey",
+      "icon": "uil uil-pricetag-alt"
+    },
+    {
+      "label": "Target Audience Profile",
+      "link_to": "Target Audience Profile",
+      "type": "DocType",
+      "name": "sc-5",
+      "color": "Grey",
+      "icon": "uil uil-user-square"
+    }
   ],
-  "shortcuts": [],
   "title": "Masters"
 }

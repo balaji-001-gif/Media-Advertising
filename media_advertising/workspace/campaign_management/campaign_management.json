@@ -1,23 +1,56 @@
 {
+  "category": "Modules",
   "charts": [],
-  "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"Campaign Management\",\"col\":4}}]",
+  "content": "[{\"id\": \"hd-0\", \"type\": \"header\", \"data\": {\"text\": \"Campaign Management\", \"col\": 12}}, {\"id\": \"sc-1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Campaign\", \"col\": 3}}, {\"id\": \"sc-2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Campaign Brief\", \"col\": 3}}, {\"id\": \"sc-3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Campaign Phase\", \"col\": 3}}, {\"id\": \"sc-4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Media Plan\", \"col\": 3}}, {\"id\": \"sc-5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Ad Placement\", \"col\": 3}}]",
   "doctype": "Workspace",
-  "extends": "",
-  "icon": "bullhorn",
+  "for_user": "",
+  "icon": "uil uil-bullhorn",
   "is_hidden": 0,
   "label": "Campaign Management",
   "module": "Campaign Management",
   "name": "Campaign Management",
   "public": 1,
-  "roles": [],
-  "links": [
-    {"hidden": 0, "is_query_report": 0, "label": "Campaign Management", "onboard": 0, "type": "Card Break"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Campaign", "link_to": "Campaign", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Campaign Brief", "link_to": "Campaign Brief", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Campaign Phase", "link_to": "Campaign Phase", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Media Plan", "link_to": "Media Plan", "link_type": "DocType", "onboard": 0, "type": "Link"},
-    {"dependencies": "", "hidden": 0, "is_query_report": 0, "label": "Ad Placement", "link_to": "Ad Placement", "link_type": "DocType", "onboard": 0, "type": "Link"}
+  "shortcuts": [
+    {
+      "label": "Campaign",
+      "link_to": "Campaign",
+      "type": "DocType",
+      "name": "sc-1",
+      "color": "Blue",
+      "icon": "uil uil-bullhorn"
+    },
+    {
+      "label": "Campaign Brief",
+      "link_to": "Campaign Brief",
+      "type": "DocType",
+      "name": "sc-2",
+      "color": "Blue",
+      "icon": "uil uil-file-alt"
+    },
+    {
+      "label": "Campaign Phase",
+      "link_to": "Campaign Phase",
+      "type": "DocType",
+      "name": "sc-3",
+      "color": "Blue",
+      "icon": "uil uil-layer-group"
+    },
+    {
+      "label": "Media Plan",
+      "link_to": "Media Plan",
+      "type": "DocType",
+      "name": "sc-4",
+      "color": "Blue",
+      "icon": "uil uil-schedule"
+    },
+    {
+      "label": "Ad Placement",
+      "link_to": "Ad Placement",
+      "type": "DocType",
+      "name": "sc-5",
+      "color": "Blue",
+      "icon": "uil uil-location-pin-alt"
+    }
   ],
-  "shortcuts": [],
   "title": "Campaign Management"
 }
