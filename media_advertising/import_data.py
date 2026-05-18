@@ -6,7 +6,11 @@ def run():
     app_path = frappe.get_app_path("media_advertising")
     print(f"Scanning app directory: {app_path}")
     
-    # 1. Self-healing step: Ensure all 8 Module Def records exist in the database
+    # Print existing Module Defs in DB to debug
+    res = frappe.db.sql("SELECT name, app_name FROM `tabModule Def` WHERE name IN ('Masters', 'Reporting Analytics', 'Media Operations', 'Campaign Management', 'Client CRM', 'Billing Finance', 'Resource Production', 'Media Advertising')")
+    print(f"DEBUG: Found Module Defs in DB: {res}")
+    
+    # 1. Force recreate all 8 Module Def records to ensure they exist and are correctly linked
     modules = [
         "Media Advertising", 
         "Campaign Management", 
@@ -18,17 +22,22 @@ def run():
         "Masters"
     ]
     
-    print("Checking and restoring missing Module Def records...")
+    print("Forcing restoration of all 8 Module Def records...")
     for m in modules:
-        if not frappe.db.exists("Module Def", m):
-            print(f"🛠️ Creating missing Module Def: {m}")
-            doc = frappe.new_doc("Module Def")
-            doc.module_name = m
-            doc.app_name = "media_advertising"
-            doc.insert(ignore_permissions=True)
+        # Check if already exists in DB
+        exists = frappe.db.sql("SELECT name FROM `tabModule Def` WHERE name=%s", (m,))
+        if exists:
+            print(f"Module Def {m} exists in DB. Deleting and recreating to ensure correctness...")
+            frappe.db.sql("DELETE FROM `tabModule Def` WHERE name=%s", (m,))
+        
+        print(f"🛠️ Creating Module Def: {m}")
+        doc = frappe.new_doc("Module Def")
+        doc.module_name = m
+        doc.app_name = "media_advertising"
+        doc.insert(ignore_permissions=True)
             
     frappe.db.commit()
-    print("✅ All Module Def records verified and restored!")
+    print("✅ All Module Def records successfully restored and verified!")
     
     # 2. Force import workspaces, reports, and notifications
     json_files = []
