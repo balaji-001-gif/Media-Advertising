@@ -265,8 +265,11 @@ def create_demo_data():
             doc.account_manager = user
             doc.description = f"<p>Active execution log for {campaign_name}. Relational KPI thresholds and channels have been locked.</p>"
             doc.insert(ignore_permissions=True)
-            doc.submit()
-            created_campaigns.append(doc.name)
+            
+            # Reload fresh instance to avoid CannotChangeConstantError on set_only_once naming_series
+            fresh_doc = frappe.get_doc("Campaign", doc.name)
+            fresh_doc.submit()
+            created_campaigns.append(fresh_doc.name)
         else:
             created_campaigns.append(frappe.db.get_value("Campaign", {"campaign_name": campaign_name}, "name"))
 
@@ -319,8 +322,11 @@ def create_demo_data():
             })
             
             doc.insert(ignore_permissions=True)
-            doc.submit()
-            created_plans.append(doc.name)
+            
+            # Reload fresh instance to avoid CannotChangeConstantError
+            fresh_doc = frappe.get_doc("Media Plan", doc.name)
+            fresh_doc.submit()
+            created_plans.append(fresh_doc.name)
         else:
             created_plans.append(frappe.db.get_value("Media Plan", {"campaign": campaign}, "name"))
 
@@ -349,8 +355,11 @@ def create_demo_data():
             doc.negotiated_rate = budgets[i] * 0.5
             doc.status = "Confirmed"
             doc.insert(ignore_permissions=True)
-            doc.submit()
-            created_bookings.append(doc.name)
+            
+            # Reload fresh instance to avoid CannotChangeConstantError
+            fresh_doc = frappe.get_doc("Ad Booking", doc.name)
+            fresh_doc.submit()
+            created_bookings.append(fresh_doc.name)
         else:
             created_bookings.append(frappe.db.get_value("Ad Booking", {"media_plan": plan}, "name"))
 
@@ -388,7 +397,10 @@ def create_demo_data():
             doc.air_date = current_date
             doc.status = "Active"
             doc.insert(ignore_permissions=True)
-            doc.submit()
+            
+            # Reload fresh instance to avoid CannotChangeConstantError
+            fresh_doc = frappe.get_doc("Traffic Order", doc.name)
+            fresh_doc.submit()
 
     # 16. Populate Campaign Budget (12 entries)
     print("Populating Campaign Budgets...")
@@ -412,7 +424,10 @@ def create_demo_data():
             })
             
             doc.insert(ignore_permissions=True)
-            doc.submit()
+            
+            # Reload fresh instance to avoid CannotChangeConstantError
+            fresh_doc = frappe.get_doc("Campaign Budget", doc.name)
+            fresh_doc.submit()
 
     # 17. Populate Media Invoice (12 entries)
     print("Populating Media Invoices...")
@@ -436,7 +451,10 @@ def create_demo_data():
             })
             
             doc.insert(ignore_permissions=True)
-            doc.submit()
+            
+            # Reload fresh instance to avoid CannotChangeConstantError
+            fresh_doc = frappe.get_doc("Media Invoice", doc.name)
+            fresh_doc.submit()
 
     # 18. Populate Production Job (12 entries)
     print("Populating Production Jobs...")
