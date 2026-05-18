@@ -6,9 +6,33 @@ def run():
     app_path = frappe.get_app_path("media_advertising")
     print(f"Scanning app directory: {app_path}")
     
+    # 1. Self-healing step: Ensure all 8 Module Def records exist in the database
+    modules = [
+        "Media Advertising", 
+        "Campaign Management", 
+        "Media Operations", 
+        "Client CRM", 
+        "Billing Finance", 
+        "Resource Production", 
+        "Reporting Analytics", 
+        "Masters"
+    ]
+    
+    print("Checking and restoring missing Module Def records...")
+    for m in modules:
+        if not frappe.db.exists("Module Def", m):
+            print(f"🛠️ Creating missing Module Def: {m}")
+            doc = frappe.new_doc("Module Def")
+            doc.module_name = m
+            doc.app_name = "media_advertising"
+            doc.insert(ignore_permissions=True)
+            
+    frappe.db.commit()
+    print("✅ All Module Def records verified and restored!")
+    
+    # 2. Force import workspaces, reports, and notifications
     json_files = []
     for root, dirs, files in os.walk(app_path):
-        # Scan under workspace, report, and notification folders
         if any(k in root for k in ["workspace", "report", "notification"]):
             for file in files:
                 if file.endswith(".json"):
