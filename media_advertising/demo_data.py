@@ -454,15 +454,16 @@ def create_demo_data():
     print("Populating Production Jobs...")
     for i, campaign in enumerate(created_campaigns):
         name = f"Job for {brief_titles[i]}"
-        if not frappe.db.exists("Production Job", {"job_name": name}):
+        client = created_clients[i]
+        if not frappe.db.exists("Production Job", {"job_title": name}):
             doc = frappe.new_doc("Production Job")
             doc.naming_series = "PROD-.YYYY.-"
-            doc.job_name = name
+            doc.job_title = name  # Map correct field name
             doc.campaign = campaign
+            doc.client = client
             doc.start_date = current_date
             doc.end_date = add_days(current_date, 15)
             doc.status = "In Progress"
-            doc.assigned_team = "Creative Team Alpha"
             doc.insert(ignore_permissions=True)
 
     print("✨ Premium demo data generation finished successfully!")
