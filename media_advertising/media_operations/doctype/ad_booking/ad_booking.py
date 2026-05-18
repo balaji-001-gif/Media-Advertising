@@ -30,6 +30,7 @@ class AdBooking(Document):
         if self.traffic_order:
             return
         to = frappe.new_doc("Traffic Order")
+        to.naming_series = "TO-.YYYY.-"
         to.ad_booking = self.name
         to.campaign = self.campaign
         to.media_channel = self.media_channel
