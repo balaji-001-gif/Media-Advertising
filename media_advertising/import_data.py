@@ -1,27 +1,13 @@
 import os
 import frappe
 from frappe.modules.import_file import import_file_by_path
+from frappe.model.sync import sync_for
 
 def run():
     app_path = frappe.get_app_path("media_advertising")
     print(f"Scanning app directory: {app_path}")
     
-    # 1. Check if media_advertising is registered as installed on the site using the official Frappe API
-    installed_apps = frappe.get_installed_apps()
-    print(f"DEBUG: Installed Apps on site: {installed_apps}")
-    
-    if "media_advertising" not in installed_apps:
-        print("⚠️ WARNING: media_advertising is NOT registered in installed_apps! Auto-registering...")
-        from frappe.installer import add_to_installed_apps
-        add_to_installed_apps("media_advertising")
-        frappe.db.commit()
-        print("✅ Registered media_advertising in installed_apps!")
-    
-    # Print existing Module Defs in DB to debug
-    res = frappe.db.sql("SELECT name, app_name FROM `tabModule Def` WHERE name IN ('Masters', 'Reporting Analytics', 'Media Operations', 'Campaign Management', 'Client CRM', 'Billing Finance', 'Resource Production', 'Media Advertising')")
-    print(f"DEBUG: Found Module Defs in DB: {res}")
-    
-    # 2. Force recreate all 8 Module Def records to ensure they exist and are correctly linked
+    # 1. Ensure all 8 Module Def records exist in the database (Create only if missing to prevent cache dirtiness)
     modules = [
         "Media Advertising", 
         "Campaign Management", 
@@ -33,27 +19,40 @@ def run():
         "Masters"
     ]
     
-    print("Forcing restoration of all 8 Module Def records...")
+    print("Checking and restoring missing Module Def records...")
+    recreated = False
     for m in modules:
-        exists = frappe.db.sql("SELECT name FROM `tabModule Def` WHERE name=%s", (m,))
-        if exists:
-            print(f"Module Def {m} exists in DB. Deleting and recreating to ensure correctness...")
-            frappe.db.sql("DELETE FROM `tabModule Def` WHERE name=%s", (m,))
-        
-        print(f"🛠️ Creating Module Def: {m}")
-        doc = frappe.new_doc("Module Def")
-        doc.module_name = m
-        doc.app_name = "media_advertising"
-        doc.insert(ignore_permissions=True)
+        if not frappe.db.exists("Module Def", m):
+            print(f"🛠️ Creating missing Module Def: {m}")
+            doc = frappe.new_doc("Module Def")
+            doc.module_name = m
+            doc.app_name = "media_advertising"
+            doc.insert(ignore_permissions=True)
+            recreated = True
             
     frappe.db.commit()
-    print("✅ All Module Def records successfully restored and verified!")
+    print("✅ All Module Def records verified and restored!")
     
-    # Clear local and global caches
+    # 2. FORCE-CLEAR all in-memory caches in Frappe
+    # This forces the active process to reload the newly created Module Defs immediately!
+    if hasattr(frappe.local, "app_modules"):
+        print("Clearing in-memory app modules cache...")
+        delattr(frappe.local, "app_modules")
+        
     frappe.clear_cache()
     frappe.local.cache = {}
+    print("✅ In-memory caches cleared successfully!")
     
-    # 3. Force import workspaces, reports, and notifications
+    # 3. Programmatically force sync all DocTypes of media_advertising
+    # This builds the DocType tables before the standard migration reaches the fixtures sync!
+    print("Force syncing all DocTypes for media_advertising...")
+    try:
+        sync_for("media_advertising", force=True)
+        print("✅ All DocTypes force-synced successfully!")
+    except Exception as e:
+        print(f"⚠️ DocType sync warning: {str(e)}")
+        
+    # 4. Force import workspaces, reports, and notifications
     json_files = []
     for root, dirs, files in os.walk(app_path):
         if any(k in root for k in ["workspace", "report", "notification"]):
