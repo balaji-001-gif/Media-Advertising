@@ -297,26 +297,30 @@ def create_demo_data():
     created_plans = []
     for i, campaign in enumerate(created_campaigns):
         plan_name = f"Plan for {brief_titles[i]}"
+        client_name = created_clients[i]
         if not frappe.db.exists("Media Plan", {"campaign": campaign}):
             doc = frappe.new_doc("Media Plan")
             doc.naming_series = "MP-.YYYY.-"
+            doc.plan_title = plan_name
             doc.campaign = campaign
-            doc.start_date = current_date
-            doc.end_date = add_days(current_date, 90)
-            doc.total_budget = budgets[i]
+            doc.client = client_name
+            doc.plan_date = current_date
+            doc.status = "Approved"
             
-            # Append detailed item row
-            doc.append("items", {
+            # Append detailed item row matching correct child table field 'media_plan_items'
+            doc.append("media_plan_items", {
                 "media_channel": "Google Display Network" if i % 2 == 0 else "YouTube Video Ads",
                 "ad_format": "Display Banner" if i % 2 == 0 else "Video Ad (30 sec)",
-                "allocated_budget": budgets[i] * 0.6,
+                "rate": budgets[i] * 0.6,
+                "quantity": 1,
                 "start_date": current_date,
                 "end_date": add_days(current_date, 90)
             })
-            doc.append("items", {
+            doc.append("media_plan_items", {
                 "media_channel": "Instagram Influencer Post" if i % 2 == 0 else "Facebook Sponsored Ads",
                 "ad_format": "Sponsored Story" if i % 2 == 0 else "Carousel Post",
-                "allocated_budget": budgets[i] * 0.4,
+                "rate": budgets[i] * 0.4,
+                "quantity": 1,
                 "start_date": current_date,
                 "end_date": add_days(current_date, 90)
             })
@@ -405,22 +409,24 @@ def create_demo_data():
     # 16. Populate Campaign Budget (12 entries)
     print("Populating Campaign Budgets...")
     for i, campaign in enumerate(created_campaigns):
+        client_name = created_clients[i]
         if not frappe.db.exists("Campaign Budget", {"campaign": campaign}):
             doc = frappe.new_doc("Campaign Budget")
             doc.naming_series = "CBUD-.YYYY.-"
             doc.campaign = campaign
+            doc.client = client_name
             doc.total_budget = budgets[i]
             doc.currency = currency
             doc.status = "Approved"
             
-            # Append detailed item row
-            doc.append("items", {
+            # Append detailed item row matching correct child table field 'budget_items'
+            doc.append("budget_items", {
                 "media_channel": "Google Display Network" if i % 2 == 0 else "YouTube Video Ads",
-                "allocated_amount": budgets[i] * 0.7
+                "allocated": budgets[i] * 0.7
             })
-            doc.append("items", {
+            doc.append("budget_items", {
                 "media_channel": "Instagram Influencer Post" if i % 2 == 0 else "Facebook Sponsored Ads",
-                "allocated_amount": budgets[i] * 0.3
+                "allocated": budgets[i] * 0.3
             })
             
             doc.insert(ignore_permissions=True)
@@ -433,9 +439,11 @@ def create_demo_data():
     print("Populating Media Invoices...")
     for i, campaign in enumerate(created_campaigns):
         client = created_clients[i]
+        booking = created_bookings[i]
         if not frappe.db.exists("Media Invoice", {"campaign": campaign}):
             doc = frappe.new_doc("Media Invoice")
             doc.naming_series = "MINV-.YYYY.-"
+            doc.invoice_title = f"Invoice - {brief_titles[i]}"
             doc.campaign = campaign
             doc.client = client
             doc.invoice_date = current_date
@@ -444,10 +452,12 @@ def create_demo_data():
             doc.currency = currency
             doc.status = "Unpaid"
             
-            # Append item row
-            doc.append("items", {
+            # Append item row matching correct child table field 'invoice_items'
+            doc.append("invoice_items", {
                 "description": f"Media Delivery Fees for {brief_titles[i]}",
-                "amount": budgets[i]
+                "ad_booking": booking,
+                "quantity": 1,
+                "rate": budgets[i]
             })
             
             doc.insert(ignore_permissions=True)
