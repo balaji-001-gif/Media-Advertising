@@ -434,7 +434,7 @@ def create_demo_data():
             doc.due_date = add_days(current_date, 30)
             doc.company = company
             doc.currency = currency
-            doc.status = "Unpaid"
+            doc.status = "Draft"  # Set to valid Select option
             
             # Append item row matching correct child table field 'invoice_items'
             doc.append("invoice_items", {
