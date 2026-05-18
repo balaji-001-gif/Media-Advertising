@@ -1,7 +1,7 @@
 from frappe.model.document import Document
 
 
-class BudgetVsActual(Document):
+class BudgetvsActual(Document):
     def validate(self):
         self.total_budget = sum((r.budgeted or 0) for r in (self.channel_rows or []))
         self.total_actual = sum((r.actual or 0) for r in (self.channel_rows or []))

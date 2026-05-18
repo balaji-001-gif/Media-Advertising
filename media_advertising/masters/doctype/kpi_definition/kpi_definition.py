@@ -1,5 +1,5 @@
 from frappe.model.document import Document
 
 
-class KpiDefinition(Document):
+class KPIDefinition(Document):
     pass

@@ -1,5 +1,5 @@
 from frappe.model.document import Document
 
 
-class BudgetVsActualRow(Document):
+class BudgetvsActualRow(Document):
     pass
