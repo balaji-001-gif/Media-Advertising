@@ -11,7 +11,7 @@ def run():
         "Media Advertising", 
         "Campaign Management", 
         "Media Operations", 
-        "Client CRM", 
+        "Client Crm", 
         "Billing Finance", 
         "Resource Production", 
         "Reporting Analytics", 
