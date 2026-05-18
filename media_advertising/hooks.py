@@ -13,8 +13,8 @@ required_apps = ["frappe", "erpnext"]
 # autoname = "field:name"
 
 # Includes in <head>
-app_include_css = "/assets/media_advertising/css/media_advertising.css"
-app_include_js = "/assets/media_advertising/js/media_advertising.js"
+app_include_css = "/assets/media_advertising/css/media_advertising.bundle.css"
+app_include_js = "/assets/media_advertising/js/media_advertising.bundle.js"
 
 # Web assets
 web_include_css = []

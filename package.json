@@ -1,0 +1,8 @@
+{
+  "name": "media_advertising",
+  "version": "0.0.1",
+  "description": "Media & Advertising ERP for ERPNext v15+",
+  "scripts": {},
+  "keywords": [],
+  "license": "MIT"
+}
