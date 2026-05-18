@@ -1,282 +1,417 @@
 {
   "category": "Modules",
   "charts": [],
-  "content": "[{\"id\": \"hd-0\", \"type\": \"header\", \"data\": {\"text\": \"Campaign Management\", \"col\": 12}}, {\"id\": \"sc-1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Campaign\", \"col\": 3}}, {\"id\": \"sc-2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Campaign Brief\", \"col\": 3}}, {\"id\": \"sc-3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Campaign Phase\", \"col\": 3}}, {\"id\": \"sc-4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Media Plan\", \"col\": 3}}, {\"id\": \"sc-5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Ad Placement\", \"col\": 3}}, {\"id\": \"hd-1\", \"type\": \"header\", \"data\": {\"text\": \"Client & CRM\", \"col\": 12}}, {\"id\": \"sc-6\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Agency Client\", \"col\": 3}}, {\"id\": \"sc-7\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Client Brief\", \"col\": 3}}, {\"id\": \"sc-8\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Client Approval\", \"col\": 3}}, {\"id\": \"sc-9\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Proposal\", \"col\": 3}}, {\"id\": \"sc-10\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Retainer Agreement\", \"col\": 3}}, {\"id\": \"hd-2\", \"type\": \"header\", \"data\": {\"text\": \"Media Operations\", \"col\": 12}}, {\"id\": \"sc-11\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Ad Booking\", \"col\": 3}}, {\"id\": \"sc-12\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Ad Slot\", \"col\": 3}}, {\"id\": \"sc-13\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Ad Format\", \"col\": 3}}, {\"id\": \"sc-14\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Traffic Order\", \"col\": 3}}, {\"id\": \"sc-15\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Creative Asset\", \"col\": 3}}, {\"id\": \"sc-16\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Media Channel\", \"col\": 3}}, {\"id\": \"hd-3\", \"type\": \"header\", \"data\": {\"text\": \"Billing & Finance\", \"col\": 12}}, {\"id\": \"sc-17\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Media Invoice\", \"col\": 3}}, {\"id\": \"sc-18\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Campaign Budget\", \"col\": 3}}, {\"id\": \"sc-19\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vendor Bill\", \"col\": 3}}, {\"id\": \"sc-20\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Commission Entry\", \"col\": 3}}, {\"id\": \"sc-21\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"WIP Entry\", \"col\": 3}}, {\"id\": \"hd-4\", \"type\": \"header\", \"data\": {\"text\": \"Resource & Production\", \"col\": 12}}, {\"id\": \"sc-22\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Production Job\", \"col\": 3}}, {\"id\": \"sc-23\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Resource Allocation\", \"col\": 3}}, {\"id\": \"sc-24\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Timesheet Entry\", \"col\": 3}}, {\"id\": \"sc-25\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Freelancer Contract\", \"col\": 3}}, {\"id\": \"hd-5\", \"type\": \"header\", \"data\": {\"text\": \"Masters\", \"col\": 12}}, {\"id\": \"sc-26\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Industry Vertical\", \"col\": 3}}, {\"id\": \"sc-27\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Media Category\", \"col\": 3}}, {\"id\": \"sc-28\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"KPI Definition\", \"col\": 3}}, {\"id\": \"sc-29\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Pricing Template\", \"col\": 3}}, {\"id\": \"sc-30\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Target Audience Profile\", \"col\": 3}}, {\"id\": \"hd-6\", \"type\": \"header\", \"data\": {\"text\": \"Reports & Analytics\", \"col\": 12}}, {\"id\": \"sc-31\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Campaign Report\", \"col\": 3}}, {\"id\": \"sc-32\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Budget vs Actual\", \"col\": 3}}, {\"id\": \"sc-33\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Budget vs Actual Report\", \"col\": 3}}, {\"id\": \"sc-34\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Media Delivery Report\", \"col\": 3}}]",
+  "content": "[{\"type\": \"card\", \"data\": {\"card_name\": \"Campaign Management\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Client & CRM\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Media Operations\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Billing & Finance\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Resource & Production\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Advertising Masters\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Reporting & Analytics\", \"col\": 4}}]",
   "doctype": "Workspace",
-  "for_user": "",
-  "icon": "uil uil-megaphone",
+  "extends": "",
+  "icon": "bullhorn",
   "is_hidden": 0,
   "label": "Media Advertising",
   "module": "Media Advertising",
   "name": "Media Advertising",
   "public": 1,
-  "shortcuts": [
+  "roles": [],
+  "links": [
     {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Campaign Management",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Campaign",
       "link_to": "Campaign",
-      "type": "DocType",
-      "name": "sc-1",
-      "color": "Blue",
-      "icon": "uil uil-bullhorn"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Campaign Brief",
       "link_to": "Campaign Brief",
-      "type": "DocType",
-      "name": "sc-2",
-      "color": "Blue",
-      "icon": "uil uil-file-alt"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Campaign Phase",
       "link_to": "Campaign Phase",
-      "type": "DocType",
-      "name": "sc-3",
-      "color": "Blue",
-      "icon": "uil uil-layer-group"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Media Plan",
       "link_to": "Media Plan",
-      "type": "DocType",
-      "name": "sc-4",
-      "color": "Blue",
-      "icon": "uil uil-schedule"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Ad Placement",
       "link_to": "Ad Placement",
-      "type": "DocType",
-      "name": "sc-5",
-      "color": "Blue",
-      "icon": "uil uil-location-pin-alt"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Client & CRM",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Agency Client",
       "link_to": "Agency Client",
-      "type": "DocType",
-      "name": "sc-6",
-      "color": "Green",
-      "icon": "uil uil-user-check"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Client Brief",
       "link_to": "Client Brief",
-      "type": "DocType",
-      "name": "sc-7",
-      "color": "Green",
-      "icon": "uil uil-notes"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Client Approval",
       "link_to": "Client Approval",
-      "type": "DocType",
-      "name": "sc-8",
-      "color": "Green",
-      "icon": "uil uil-check-circle"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Proposal",
       "link_to": "Proposal",
-      "type": "DocType",
-      "name": "sc-9",
-      "color": "Green",
-      "icon": "uil uil-invoice"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Retainer Agreement",
       "link_to": "Retainer Agreement",
-      "type": "DocType",
-      "name": "sc-10",
-      "color": "Green",
-      "icon": "uil uil-file-contract"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Media Operations",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Ad Booking",
       "link_to": "Ad Booking",
-      "type": "DocType",
-      "name": "sc-11",
-      "color": "Orange",
-      "icon": "uil uil-bookmark"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Ad Slot",
       "link_to": "Ad Slot",
-      "type": "DocType",
-      "name": "sc-12",
-      "color": "Orange",
-      "icon": "uil uil-grids"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Ad Format",
       "link_to": "Ad Format",
-      "type": "DocType",
-      "name": "sc-13",
-      "color": "Orange",
-      "icon": "uil uil-columns"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Traffic Order",
       "link_to": "Traffic Order",
-      "type": "DocType",
-      "name": "sc-14",
-      "color": "Orange",
-      "icon": "uil uil-exchange"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Creative Asset",
       "link_to": "Creative Asset",
-      "type": "DocType",
-      "name": "sc-15",
-      "color": "Orange",
-      "icon": "uil uil-image-v"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Media Channel",
       "link_to": "Media Channel",
-      "type": "DocType",
-      "name": "sc-16",
-      "color": "Orange",
-      "icon": "uil uil-channel"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
+      "label": "Delivery Report",
+      "link_to": "Delivery Report",
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Billing & Finance",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Media Invoice",
       "link_to": "Media Invoice",
-      "type": "DocType",
-      "name": "sc-17",
-      "color": "Purple",
-      "icon": "uil uil-bill"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Campaign Budget",
       "link_to": "Campaign Budget",
-      "type": "DocType",
-      "name": "sc-18",
-      "color": "Purple",
-      "icon": "uil uil-wallet"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Vendor Bill",
       "link_to": "Vendor Bill",
-      "type": "DocType",
-      "name": "sc-19",
-      "color": "Purple",
-      "icon": "uil uil-receipt"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Commission Entry",
       "link_to": "Commission Entry",
-      "type": "DocType",
-      "name": "sc-20",
-      "color": "Purple",
-      "icon": "uil uil-percentage"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "WIP Entry",
       "link_to": "WIP Entry",
-      "type": "DocType",
-      "name": "sc-21",
-      "color": "Purple",
-      "icon": "uil uil-hourglass"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Resource & Production",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Production Job",
       "link_to": "Production Job",
-      "type": "DocType",
-      "name": "sc-22",
-      "color": "Red",
-      "icon": "uil uil-wrench"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Resource Allocation",
       "link_to": "Resource Allocation",
-      "type": "DocType",
-      "name": "sc-23",
-      "color": "Red",
-      "icon": "uil uil-users-alt"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Timesheet Entry",
       "link_to": "Timesheet Entry",
-      "type": "DocType",
-      "name": "sc-24",
-      "color": "Red",
-      "icon": "uil uil-clock"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Freelancer Contract",
       "link_to": "Freelancer Contract",
-      "type": "DocType",
-      "name": "sc-25",
-      "color": "Red",
-      "icon": "uil uil-file-contract-sig"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Advertising Masters",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Industry Vertical",
       "link_to": "Industry Vertical",
-      "type": "DocType",
-      "name": "sc-26",
-      "color": "Grey",
-      "icon": "uil uil-building"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Media Category",
       "link_to": "Media Category",
-      "type": "DocType",
-      "name": "sc-27",
-      "color": "Grey",
-      "icon": "uil uil-apps"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "KPI Definition",
       "link_to": "KPI Definition",
-      "type": "DocType",
-      "name": "sc-28",
-      "color": "Grey",
-      "icon": "uil uil-award"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Pricing Template",
       "link_to": "Pricing Template",
-      "type": "DocType",
-      "name": "sc-29",
-      "color": "Grey",
-      "icon": "uil uil-pricetag-alt"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Target Audience Profile",
       "link_to": "Target Audience Profile",
-      "type": "DocType",
-      "name": "sc-30",
-      "color": "Grey",
-      "icon": "uil uil-user-square"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Reporting & Analytics",
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
       "label": "Campaign Report",
       "link_to": "Campaign Report",
-      "type": "Report",
-      "name": "sc-31"
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
       "label": "Budget vs Actual",
       "link_to": "Budget vs Actual",
-      "type": "DocType",
-      "name": "sc-32",
-      "color": "Yellow",
-      "icon": "uil uil-balance-scale"
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
       "label": "Budget vs Actual Report",
       "link_to": "Budget vs Actual Report",
-      "type": "Report",
-      "name": "sc-33"
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
     },
     {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 1,
       "label": "Media Delivery Report",
       "link_to": "Media Delivery Report",
-      "type": "Report",
-      "name": "sc-34"
+      "link_type": "Report",
+      "onboard": 0,
+      "type": "Link"
     }
   ],
+  "shortcuts": [],
   "title": "Media Advertising"
 }
