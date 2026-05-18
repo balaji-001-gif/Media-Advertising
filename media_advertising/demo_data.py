@@ -334,40 +334,8 @@ def create_demo_data():
         else:
             created_plans.append(frappe.db.get_value("Media Plan", {"campaign": campaign}, "name"))
 
-    # 13. Populate Ad Booking (12 entries)
-    print("Populating Ad Bookings...")
-    created_bookings = []
-    for i, plan in enumerate(created_plans):
-        campaign = created_campaigns[i]
-        client_name = created_clients[i]
-        slot = created_slots[i]
-        chan = channels[i % len(channels)][0]
-        fmt = formats[i % len(formats)][0]
-        if not frappe.db.exists("Ad Booking", {"media_plan": plan}):
-            doc = frappe.new_doc("Ad Booking")
-            doc.naming_series = "BOOK-.YYYY.-"
-            doc.booking_title = f"Booking - {brief_titles[i]}"
-            doc.campaign = campaign
-            doc.client = client_name
-            doc.ad_slot = slot
-            doc.media_plan = plan
-            doc.media_channel = chan
-            doc.ad_format = fmt
-            doc.booking_date = current_date
-            doc.start_date = current_date
-            doc.end_date = add_days(current_date, 30)
-            doc.negotiated_rate = budgets[i] * 0.5
-            doc.status = "Confirmed"
-            doc.insert(ignore_permissions=True)
-            
-            # Reload fresh instance to avoid CannotChangeConstantError
-            fresh_doc = frappe.get_doc("Ad Booking", doc.name)
-            fresh_doc.submit()
-            created_bookings.append(fresh_doc.name)
-        else:
-            created_bookings.append(frappe.db.get_value("Ad Booking", {"media_plan": plan}, "name"))
-
-    # 14. Populate Creative Asset (12 entries)
+    # 13. Populate Creative Asset (12 entries)
+    # Generated before Ad Booking to allow linking!
     print("Populating Creative Assets...")
     created_creatives = []
     for i, campaign in enumerate(created_campaigns):
@@ -385,28 +353,44 @@ def create_demo_data():
         else:
             created_creatives.append(frappe.db.get_value("Creative Asset", {"asset_name": name}, "name"))
 
-    # 15. Populate Traffic Order (12 entries)
-    print("Populating Traffic Orders...")
-    for i, booking in enumerate(created_bookings):
-        creative = created_creatives[i]
+    # 14. Populate Ad Booking (12 entries)
+    # The submit hook of Ad Booking automatically and cleanly handles Traffic Order generation!
+    print("Populating Ad Bookings...")
+    created_bookings = []
+    for i, plan in enumerate(created_plans):
+        campaign = created_campaigns[i]
+        client_name = created_clients[i]
+        slot = created_slots[i]
         chan = channels[i % len(channels)][0]
-        if not frappe.db.exists("Traffic Order", {"ad_booking": booking}):
-            doc = frappe.new_doc("Traffic Order")
-            doc.naming_series = "TO-.YYYY.-"
-            doc.ad_booking = booking
-            doc.creative_asset = creative
+        fmt = formats[i % len(formats)][0]
+        creative = created_creatives[i]
+        if not frappe.db.exists("Ad Booking", {"media_plan": plan}):
+            doc = frappe.new_doc("Ad Booking")
+            doc.naming_series = "BOOK-.YYYY.-"
+            doc.booking_title = f"Booking - {brief_titles[i]}"
+            doc.campaign = campaign
+            doc.client = client_name
+            doc.ad_slot = slot
+            doc.media_plan = plan
             doc.media_channel = chan
-            doc.instruction = f"High priority broadcast for campaign {brief_titles[i]}. Ensure exact resolution matching."
-            doc.order_date = current_date
-            doc.air_date = current_date
-            doc.status = "Active"
+            doc.ad_format = fmt
+            doc.booking_date = current_date
+            doc.air_date = current_date  # Critical to prevent mandatory field errors in auto-generated Traffic Orders
+            doc.start_date = current_date
+            doc.end_date = add_days(current_date, 30)
+            doc.negotiated_rate = budgets[i] * 0.5
+            doc.creative_asset = creative
+            doc.status = "Confirmed"
             doc.insert(ignore_permissions=True)
             
             # Reload fresh instance to avoid CannotChangeConstantError
-            fresh_doc = frappe.get_doc("Traffic Order", doc.name)
+            fresh_doc = frappe.get_doc("Ad Booking", doc.name)
             fresh_doc.submit()
+            created_bookings.append(fresh_doc.name)
+        else:
+            created_bookings.append(frappe.db.get_value("Ad Booking", {"media_plan": plan}, "name"))
 
-    # 16. Populate Campaign Budget (12 entries)
+    # 15. Populate Campaign Budget (12 entries)
     print("Populating Campaign Budgets...")
     for i, campaign in enumerate(created_campaigns):
         client_name = created_clients[i]
@@ -435,7 +419,7 @@ def create_demo_data():
             fresh_doc = frappe.get_doc("Campaign Budget", doc.name)
             fresh_doc.submit()
 
-    # 17. Populate Media Invoice (12 entries)
+    # 16. Populate Media Invoice (12 entries)
     print("Populating Media Invoices...")
     for i, campaign in enumerate(created_campaigns):
         client = created_clients[i]
@@ -466,7 +450,7 @@ def create_demo_data():
             fresh_doc = frappe.get_doc("Media Invoice", doc.name)
             fresh_doc.submit()
 
-    # 18. Populate Production Job (12 entries)
+    # 17. Populate Production Job (12 entries)
     print("Populating Production Jobs...")
     for i, campaign in enumerate(created_campaigns):
         name = f"Job for {brief_titles[i]}"
