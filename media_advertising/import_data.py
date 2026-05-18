@@ -6,15 +6,16 @@ def run():
     app_path = frappe.get_app_path("media_advertising")
     print(f"Scanning app directory: {app_path}")
     
-    # 1. Check if media_advertising is registered as installed on the site in the database
-    installed_apps = frappe.db.sql("SELECT name FROM `tabInstalled App` WHERE name=%s", ("media_advertising",))
-    print(f"DEBUG: Installed App check in DB: {installed_apps}")
+    # 1. Check if media_advertising is registered as installed on the site using the official Frappe API
+    installed_apps = frappe.get_installed_apps()
+    print(f"DEBUG: Installed Apps on site: {installed_apps}")
     
-    if not installed_apps:
-        print("⚠️ WARNING: media_advertising is NOT in tabInstalled App table! Attempting to register it...")
-        frappe.db.sql("INSERT IGNORE INTO `tabInstalled App` (name, creation, modified, modified_by, owner) VALUES (%s, NOW(), NOW(), 'Administrator', 'Administrator')", ("media_advertising",))
+    if "media_advertising" not in installed_apps:
+        print("⚠️ WARNING: media_advertising is NOT registered in installed_apps! Auto-registering...")
+        from frappe.installer import add_to_installed_apps
+        add_to_installed_apps("media_advertising")
         frappe.db.commit()
-        print("✅ Registered media_advertising in tabInstalled App!")
+        print("✅ Registered media_advertising in installed_apps!")
     
     # Print existing Module Defs in DB to debug
     res = frappe.db.sql("SELECT name, app_name FROM `tabModule Def` WHERE name IN ('Masters', 'Reporting Analytics', 'Media Operations', 'Campaign Management', 'Client CRM', 'Billing Finance', 'Resource Production', 'Media Advertising')")
