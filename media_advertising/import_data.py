@@ -30,18 +30,22 @@ def run():
     frappe.db.commit()
     print("✅ All Module Def records verified and restored!")
     
-    # 2. TARGETED CACHE RELOAD WITH SCRUBBED NAMES:
-    # We populate the in-memory cache with the scrubbed, snake_case directory names (e.g. reporting_analytics)
-    # This allows python to import the folders perfectly!
+    # 2. TARGETED CACHE RELOAD FOR BOTH APP_MODULES AND MODULE_APP:
+    # This fully registers all 8 modules in Frappe's in-memory maps!
+    scrubbed_modules = [frappe.scrub(m) for m in modules]
+    
+    # Reload app_modules cache (App -> Modules)
     if hasattr(frappe.local, "app_modules") and isinstance(frappe.local.app_modules, dict):
-        print("Safely reloading in-memory app modules cache for media_advertising...")
-        try:
-            # Convert display names like 'Reporting Analytics' to 'reporting_analytics'
-            scrubbed_modules = [frappe.scrub(m) for m in modules]
-            frappe.local.app_modules["media_advertising"] = scrubbed_modules
-            print(f"✅ In-memory app modules for media_advertising successfully reloaded: {scrubbed_modules}")
-        except Exception as e:
-            print(f"⚠️ Failed to load modules for media_advertising: {str(e)}")
+        print("Safely reloading in-memory app_modules cache for media_advertising...")
+        frappe.local.app_modules["media_advertising"] = scrubbed_modules
+        print("✅ app_modules cache updated successfully!")
+        
+    # Reload module_app cache (Module -> App)
+    if hasattr(frappe.local, "module_app") and isinstance(frappe.local.module_app, dict):
+        print("Safely reloading in-memory module_app cache for media_advertising...")
+        for sm in scrubbed_modules:
+            frappe.local.module_app[sm] = "media_advertising"
+        print("✅ module_app cache updated successfully!")
         
     frappe.clear_cache()
     frappe.local.cache = {}
