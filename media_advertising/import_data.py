@@ -1,7 +1,6 @@
 import os
 import frappe
 from frappe.modules.import_file import import_file_by_path
-from media_advertising.demo_data import create_demo_data
 
 def run():
     app_path = frappe.get_app_path("media_advertising")
@@ -85,10 +84,4 @@ def run():
             
     frappe.db.commit()
     print("✨ All workspaces, reports, and notifications successfully populated in the database!")
-    
-    # 5. Populate premium demo data for all custom DocTypes
-    try:
-        create_demo_data()
-    except Exception as e:
-        print(f"❌ Failed to generate demo data: {str(e)}")
 

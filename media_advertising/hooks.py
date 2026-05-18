@@ -11,6 +11,7 @@ required_apps = ["frappe", "erpnext"]
 
 # Run self-healing module and workspace restoration BEFORE migrate starts
 before_migrate = ["media_advertising.import_data.run"]
+after_migrate = ["media_advertising.demo_data.create_demo_data"]
 
 # DocTypes which need auto-naming
 # autoname = "field:name"
