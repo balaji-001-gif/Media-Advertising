@@ -139,6 +139,7 @@ def create_demo_data():
     for name, vert, email, phone, addr in clients_data:
         if not frappe.db.exists("Agency Client", {"client_name": name}):
             doc = frappe.new_doc("Agency Client")
+            doc.naming_series = "CLT-.YYYY.-"
             doc.client_name = name
             doc.industry_vertical = vert
             doc.email = email
@@ -174,6 +175,7 @@ def create_demo_data():
         client_name = created_clients[i]
         if not frappe.db.exists("Client Brief", {"brief_title": title}):
             doc = frappe.new_doc("Client Brief")
+            doc.naming_series = "CB-.YYYY.-"
             doc.brief_title = title
             doc.client = client_name
             doc.received_date = current_date
@@ -197,6 +199,7 @@ def create_demo_data():
         campaign_name = f"CAM - {title}"
         if not frappe.db.exists("Campaign", {"campaign_name": campaign_name}):
             doc = frappe.new_doc("Campaign")
+            doc.naming_series = "CAMP-.YYYY.-"
             doc.campaign_name = campaign_name
             doc.client = client_name
             doc.campaign_brief = brief_name
@@ -221,6 +224,7 @@ def create_demo_data():
         title = f"Approval for {brief_titles[i]}"
         if not frappe.db.exists("Client Approval", {"approval_title": title}):
             doc = frappe.new_doc("Client Approval")
+            doc.naming_series = "APPV-.YYYY.-"
             doc.approval_title = title
             doc.client = client_name
             doc.campaign = campaign
@@ -239,6 +243,7 @@ def create_demo_data():
         plan_name = f"Plan for {brief_titles[i]}"
         if not frappe.db.exists("Media Plan", {"campaign": campaign}):
             doc = frappe.new_doc("Media Plan")
+            doc.naming_series = "MP-.YYYY.-"
             doc.campaign = campaign
             doc.start_date = current_date
             doc.end_date = add_days(current_date, 90)
@@ -273,6 +278,7 @@ def create_demo_data():
         campaign = created_campaigns[i]
         if not frappe.db.exists("Ad Booking", {"media_plan": plan}):
             doc = frappe.new_doc("Ad Booking")
+            doc.naming_series = "BOOK-.YYYY.-"
             doc.campaign = campaign
             doc.media_plan = plan
             doc.media_channel = "Google Display Network" if i % 2 == 0 else "YouTube Video Ads"
@@ -295,6 +301,7 @@ def create_demo_data():
         name = f"Asset {brief_titles[i]}"
         if not frappe.db.exists("Creative Asset", {"asset_name": name}):
             doc = frappe.new_doc("Creative Asset")
+            doc.naming_series = "CA-.YYYY.-"
             doc.campaign = campaign
             doc.asset_name = name
             doc.asset_type = "Video" if i % 2 == 0 else "Image"
@@ -311,6 +318,7 @@ def create_demo_data():
         creative = created_creatives[i]
         if not frappe.db.exists("Traffic Order", {"ad_booking": booking}):
             doc = frappe.new_doc("Traffic Order")
+            doc.naming_series = "TO-.YYYY.-"
             doc.ad_booking = booking
             doc.creative_asset = creative
             doc.instruction = f"High priority broadcast for campaign {brief_titles[i]}. Ensure exact resolution matching."
@@ -324,6 +332,7 @@ def create_demo_data():
     for i, campaign in enumerate(created_campaigns):
         if not frappe.db.exists("Campaign Budget", {"campaign": campaign}):
             doc = frappe.new_doc("Campaign Budget")
+            doc.naming_series = "CBUD-.YYYY.-"
             doc.campaign = campaign
             doc.total_budget = budgets[i]
             doc.currency = currency
@@ -348,6 +357,7 @@ def create_demo_data():
         client = created_clients[i]
         if not frappe.db.exists("Media Invoice", {"campaign": campaign}):
             doc = frappe.new_doc("Media Invoice")
+            doc.naming_series = "MINV-.YYYY.-"
             doc.campaign = campaign
             doc.client = client
             doc.invoice_date = current_date
@@ -371,6 +381,7 @@ def create_demo_data():
         name = f"Job for {brief_titles[i]}"
         if not frappe.db.exists("Production Job", {"job_name": name}):
             doc = frappe.new_doc("Production Job")
+            doc.naming_series = "PROD-.YYYY.-"
             doc.job_name = name
             doc.campaign = campaign
             doc.start_date = current_date
