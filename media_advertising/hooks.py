@@ -25,18 +25,7 @@ web_include_css = []
 web_include_js = []
 
 # Document Events
-doc_events = {
-    "Campaign": {
-        "on_submit": "media_advertising.campaign_management.doctype.campaign.campaign.on_submit",
-        "on_cancel": "media_advertising.campaign_management.doctype.campaign.campaign.on_cancel",
-    },
-    "Media Invoice": {
-        "on_submit": "media_advertising.billing_finance.doctype.media_invoice.media_invoice.on_submit",
-    },
-    "Ad Booking": {
-        "after_insert": "media_advertising.media_operations.doctype.ad_booking.ad_booking.after_insert",
-    },
-}
+doc_events = {}
 
 # Scheduled Tasks
 scheduler_events = {
