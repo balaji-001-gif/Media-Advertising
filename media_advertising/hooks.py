@@ -9,6 +9,9 @@ app_version = "0.0.1"
 # Required apps
 required_apps = ["frappe", "erpnext"]
 
+# Run self-healing module and workspace restoration BEFORE migrate starts
+before_migrate = ["media_advertising.import_data.run"]
+
 # DocTypes which need auto-naming
 # autoname = "field:name"
 
@@ -45,11 +48,6 @@ scheduler_events = {
     ],
 }
 
-# Permissions
-# permission_query_conditions = {
-#     "Campaign": "media_advertising.campaign_management.doctype.campaign.campaign.get_permission_query_conditions",
-# }
-
 # Fixtures — export these with bench export-fixtures
 fixtures = [
     {"dt": "Custom Field", "filters": [["module", "=", "Media Advertising"]]},
@@ -60,12 +58,3 @@ fixtures = [
     "Ad Format",
     "KPI Definition",
 ]
-
-# Override standard methods
-# override_whitelisted_methods = {}
-
-# Jinja methods
-# jinja = {"methods": [], "filters": []}
-
-# Notification config
-# notification_config = "media_advertising.notifications.get_notification_config"
