@@ -178,7 +178,7 @@ def create_demo_data():
             doc.email = email
             doc.phone = phone
             doc.billing_address = addr
-            doc.account_manager = user
+            doc.account_manager = ""  # Keep empty to prevent email notification warnings
             doc.is_active = 1
             doc.insert(ignore_permissions=True)
             created_clients.append(doc.name)
@@ -262,7 +262,7 @@ def create_demo_data():
             doc.currency = currency
             doc.company = company
             doc.status = "Active"
-            doc.account_manager = user
+            doc.account_manager = ""  # Keep empty to prevent email notification triggers
             doc.description = f"<p>Active execution log for {campaign_name}. Relational KPI thresholds and channels have been locked.</p>"
             doc.insert(ignore_permissions=True)
             
