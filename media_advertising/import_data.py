@@ -6,11 +6,21 @@ def run():
     app_path = frappe.get_app_path("media_advertising")
     print(f"Scanning app directory: {app_path}")
     
+    # 1. Check if media_advertising is registered as installed on the site in the database
+    installed_apps = frappe.db.sql("SELECT name FROM `tabInstalled App` WHERE name=%s", ("media_advertising",))
+    print(f"DEBUG: Installed App check in DB: {installed_apps}")
+    
+    if not installed_apps:
+        print("⚠️ WARNING: media_advertising is NOT in tabInstalled App table! Attempting to register it...")
+        frappe.db.sql("INSERT IGNORE INTO `tabInstalled App` (name, creation, modified, modified_by, owner) VALUES (%s, NOW(), NOW(), 'Administrator', 'Administrator')", ("media_advertising",))
+        frappe.db.commit()
+        print("✅ Registered media_advertising in tabInstalled App!")
+    
     # Print existing Module Defs in DB to debug
     res = frappe.db.sql("SELECT name, app_name FROM `tabModule Def` WHERE name IN ('Masters', 'Reporting Analytics', 'Media Operations', 'Campaign Management', 'Client CRM', 'Billing Finance', 'Resource Production', 'Media Advertising')")
     print(f"DEBUG: Found Module Defs in DB: {res}")
     
-    # 1. Force recreate all 8 Module Def records to ensure they exist and are correctly linked
+    # 2. Force recreate all 8 Module Def records to ensure they exist and are correctly linked
     modules = [
         "Media Advertising", 
         "Campaign Management", 
@@ -24,7 +34,6 @@ def run():
     
     print("Forcing restoration of all 8 Module Def records...")
     for m in modules:
-        # Check if already exists in DB
         exists = frappe.db.sql("SELECT name FROM `tabModule Def` WHERE name=%s", (m,))
         if exists:
             print(f"Module Def {m} exists in DB. Deleting and recreating to ensure correctness...")
@@ -39,7 +48,11 @@ def run():
     frappe.db.commit()
     print("✅ All Module Def records successfully restored and verified!")
     
-    # 2. Force import workspaces, reports, and notifications
+    # Clear local and global caches
+    frappe.clear_cache()
+    frappe.local.cache = {}
+    
+    # 3. Force import workspaces, reports, and notifications
     json_files = []
     for root, dirs, files in os.walk(app_path):
         if any(k in root for k in ["workspace", "report", "notification"]):
